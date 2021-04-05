@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    
+    <Brush x:Key="DarkGreyColor">#727272</Brush>
+    <Brush x:Key="LightGreyColor">#4a4a4a</Brush>
+    <Brush x:Key="ConsoleGreyColor">#e8e8e8</Brush>
+    
+    
+</ResourceDictionary>
