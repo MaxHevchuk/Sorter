@@ -1,0 +1,31 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Sorter/1.0.0": {
+        "runtime": {
+          "Sorter.dll": {}
+        },
+        "resources": {
+          "en/Sorter.resources.dll": {
+            "locale": "en"
+          },
+          "uk/Sorter.resources.dll": {
+            "locale": "uk"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sorter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+
+    <data name="SaveButton" xml:space="preserve">
+        <value>save</value>
+    </data>
+    <data name="OpenButton" xml:space="preserve">
+        <value>open</value>
+    </data>
+    <data name="InputLabel" xml:space="preserve">
+        <value>Input</value>
+    </data>
+    <data name="OutputLabel" xml:space="preserve">
+        <value>Output</value>
+    </data>
+    <data name="SampleLabel" xml:space="preserve">
+        <value>Sample</value>
+    </data>
+    <data name="ClearButton" xml:space="preserve">
+        <value>clear</value>
+    </data>
+    <data name="CopyButton" xml:space="preserve">
+        <value>copy</value>
+    </data>
+    <data name="SortButton" xml:space="preserve">
+        <value>Sort</value>
+    </data>
+    <data name="IgnoreDuplicateCheckBox" xml:space="preserve">
+        <value>Ignore Duplicate</value>
+    </data>
+    <data name="InputSeparatorLabel" xml:space="preserve">
+        <value>Input Separator</value>
+    </data>
+    <data name="OutputSeparatorLabel" xml:space="preserve">
+        <value>Output Separator</value>
+    </data>
+    <data name="EnglishLettersRationBut" xml:space="preserve">
+        <value>English alphabet</value>
+    </data>
+    <data name="UkrainianLettersRationBut" xml:space="preserve">
+        <value>Ukrainian alphabet</value>
+    </data>
+    <data name="BinaryNumRatioBut" xml:space="preserve">
+        <value>Binary numbers</value>
+    </data>
+    <data name="DecimalNumRationBut" xml:space="preserve">
+        <value>Decimal numbers</value>
+    </data>
+    <data name="HexadecimalNumRatioBut" xml:space="preserve">
+        <value>Hexadecimal numbers</value>
+    </data>
+    <data name="LengthWordRatioBut" xml:space="preserve">
+        <value>Word size</value>
+    </data>
+    <data name="LengthNumLabel" xml:space="preserve">
+        <value>length</value>
+    </data>
+    <data name="PermutationLabel" xml:space="preserve">
+        <value>permutation</value>
+    </data>
+    <data name="TimeLabel" xml:space="preserve">
+        <value>time</value>
+    </data>
+    <data name="Title" xml:space="preserve">
+        <value>Sorter</value>
+    </data>
+    <data name="BubbleRadioBut" xml:space="preserve">
+        <value>Bubble Sort</value>
+    </data>
+    <data name="CocktailRadioBut" xml:space="preserve">
+        <value>Cocktail Sort</value>
+    </data>
+    <data name="InsertionRadioBut" xml:space="preserve">
+        <value>Insertion Sort</value>
+    </data>
+    <data name="MergeRadioBut" xml:space="preserve">
+        <value>MergeSort</value>
+    </data>
+    <data name="SelectionRadioBut" xml:space="preserve">
+        <value>Selection Sort</value>
+    </data>
+</root>

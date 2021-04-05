@@ -1,0 +1,30 @@
+﻿<Window x:Class="Sorter.LanguageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Sorter.localization"
+        mc:Ignorable="d"
+        Title="{x:Static local:resources.Title}"
+        Height="300"
+        Width="300"
+        ResizeMode="NoResize"
+        Icon="res/icons/icon_sorter.ico">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center" FontSize="20" FontStyle="Italic" FontFamily="Roboto" Content="Choose your language:" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Width="100" Height="100" Background="Transparent" BorderThickness="0" Click="ChangeToUaLanguage">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="res/icons/icon_ua.png" Width="50" Height="50" />
+                    </StackPanel>
+                </Button>
+                <Button Width="100" Height="100" Background="Transparent" BorderThickness="0" Click="ChangeToEnLanguage">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="res/icons/icon_usa.png" Width="50" Height="50" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

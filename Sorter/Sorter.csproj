@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Resource Include="res\icons\icon_sorter.ico" />
+      <None Remove="res\icons\flag-400.png" />
+      <Resource Include="res\icons\icon_ua.png" />
+      <None Remove="res\icons\icon_usa.png" />
+      <Resource Include="res\icons\icon_usa.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="localization\resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>resources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="localization\resources.uk.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>resources.uk.resx</DependentUpon>
+      </Compile>
+      <Compile Update="localization\resources.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>resources.en.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="localization\resources.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="localization\resources.uk.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>resources.uk.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="localization\resources.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>resources.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

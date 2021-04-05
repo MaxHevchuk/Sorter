@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+
+    <data name="SaveButton" xml:space="preserve">
+        <value>зберегети</value>
+    </data>
+    <data name="OpenButton" xml:space="preserve">
+        <value>відкрити</value>
+    </data>
+    <data name="InputLabel" xml:space="preserve">
+        <value>Введення</value>
+    </data>
+    <data name="OutputLabel" xml:space="preserve">
+        <value>Виведення</value>
+    </data>
+    <data name="SampleLabel" xml:space="preserve">
+        <value>Зразок</value>
+    </data>
+    <data name="ClearButton" xml:space="preserve">
+        <value>очистити</value>
+    </data>
+    <data name="CopyButton" xml:space="preserve">
+        <value>скопіювати</value>
+    </data>
+    <data name="SortButton" xml:space="preserve">
+        <value>Відсортувати</value>
+    </data>
+    <data name="IgnoreDuplicateCheckBox" xml:space="preserve">
+        <value>Ігнорувати Дублікати</value>
+    </data>
+    <data name="InputSeparatorLabel" xml:space="preserve">
+        <value>Вхідний роздільник</value>
+    </data>
+    <data name="OutputSeparatorLabel" xml:space="preserve">
+        <value>Вихідний роздільник</value>
+    </data>
+    <data name="EnglishLettersRationBut" xml:space="preserve">
+        <value>Англійский алфавіт</value>
+    </data>
+    <data name="UkrainianLettersRationBut" xml:space="preserve">
+        <value>Українский алфавіт</value>
+    </data>
+    <data name="BinaryNumRatioBut" xml:space="preserve">
+        <value>Двійкові числа</value>
+    </data>
+    <data name="DecimalNumRationBut" xml:space="preserve">
+        <value>Десяткові числа</value>
+    </data>
+    <data name="HexadecimalNumRatioBut" xml:space="preserve">
+        <value>Шістнадцяткові числа</value>
+    </data>
+    <data name="LengthWordRatioBut" xml:space="preserve">
+        <value>Розмір слів</value>
+    </data>
+    <data name="LengthNumLabel" xml:space="preserve">
+        <value>довжина</value>
+    </data>
+    <data name="TimeLabel" xml:space="preserve">
+        <value>час</value>
+    </data>
+    <data name="PermutationLabel" xml:space="preserve">
+        <value>перестановки</value>
+    </data>
+    <data name="Title" xml:space="preserve">
+        <value>Сортувальник</value>
+    </data>
+    <data name="BubbleRadioBut" xml:space="preserve">
+        <value>Сортування бульбашкою</value>
+    </data>
+    <data name="CocktailRadioBut" xml:space="preserve">
+        <value>Сортування перемішуванням</value>
+    </data>
+    <data name="MergeRadioBut" xml:space="preserve">
+        <value>Сортування злиттям</value>
+    </data>
+    <data name="InsertionRadioBut" xml:space="preserve">
+        <value>Сортування вставками</value>
+    </data>
+    <data name="SelectionRadioBut" xml:space="preserve">
+        <value>Сортування вибіркою</value>
+    </data>
+</root>
