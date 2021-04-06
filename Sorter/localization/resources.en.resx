@@ -71,10 +71,10 @@
         <value>Word size</value>
     </data>
     <data name="LengthNumLabel" xml:space="preserve">
-        <value>length</value>
+        <value>len</value>
     </data>
     <data name="PermutationLabel" xml:space="preserve">
-        <value>permutation</value>
+        <value>perm</value>
     </data>
     <data name="TimeLabel" xml:space="preserve">
         <value>time</value>
@@ -96,5 +96,20 @@
     </data>
     <data name="SelectionRadioBut" xml:space="preserve">
         <value>Selection Sort</value>
+    </data>
+    <data name="CopyClipboardMessage" xml:space="preserve">
+        <value>Copied to clipboard</value>
+    </data>
+    <data name="FileSaveText" xml:space="preserve">
+        <value>File saved</value>
+    </data>
+    <data name="Ascending" xml:space="preserve">
+        <value>A-Z</value>
+    </data>
+    <data name="Descending" xml:space="preserve">
+        <value>Z-A</value>
+    </data>
+    <data name="SettingsText" xml:space="preserve">
+        <value>Settings</value>
     </data>
 </root>

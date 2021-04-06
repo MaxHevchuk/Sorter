@@ -11,9 +11,18 @@
       <None Remove="res\icons\flag-400.png" />
       <Resource Include="res\icons\icon_ua.png" />
       <None Remove="res\icons\icon_usa.png" />
-      <Resource Include="res\icons\icon_usa.png" />
       <None Remove="res\icons\icon_ua_or_usa.jpg" />
       <Resource Include="res\icons\icon_ua_or_usa.jpg" />
+      <None Remove="res\icons\icon_open.png" />
+      <Resource Include="res\icons\icon_open.png" />
+      <None Remove="res\icons\icon_fullscreen.png" />
+      <Resource Include="res\icons\icon_fullscreen.png" />
+      <None Remove="res\icons\icon_download.png" />
+      <Resource Include="res\icons\icon_save.png" />
+      <None Remove="res\icons\icon_delete.png" />
+      <Resource Include="res\icons\icon_clear.png" />
+      <None Remove="res\icons\icon_copy.png" />
+      <Resource Include="res\icons\icon_copy.png" />
     </ItemGroup>
 
     <ItemGroup>

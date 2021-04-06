@@ -61,6 +61,15 @@ namespace Sorter.localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A-Z.
+        /// </summary>
+        internal static string Ascending {
+            get {
+                return ResourceManager.GetString("Ascending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Binary numbers.
         /// </summary>
         internal static string BinaryNumRatioBut {
@@ -106,6 +115,15 @@ namespace Sorter.localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied to clipboard.
+        /// </summary>
+        internal static string CopyClipboardMessage {
+            get {
+                return ResourceManager.GetString("CopyClipboardMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decimal numbers.
         /// </summary>
         internal static string DecimalNumRationBut {
@@ -115,11 +133,29 @@ namespace Sorter.localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Z-A.
+        /// </summary>
+        internal static string Descending {
+            get {
+                return ResourceManager.GetString("Descending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English alphabet.
         /// </summary>
         internal static string EnglishLettersRationBut {
             get {
                 return ResourceManager.GetString("EnglishLettersRationBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File saved.
+        /// </summary>
+        internal static string FileSaveText {
+            get {
+                return ResourceManager.GetString("FileSaveText", resourceCulture);
             }
         }
         
@@ -169,7 +205,7 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to length.
+        ///   Looks up a localized string similar to len.
         /// </summary>
         internal static string LengthNumLabel {
             get {
@@ -223,7 +259,7 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to permutation.
+        ///   Looks up a localized string similar to perm.
         /// </summary>
         internal static string PermutationLabel {
             get {
@@ -255,6 +291,15 @@ namespace Sorter.localization {
         internal static string SelectionRadioBut {
             get {
                 return ResourceManager.GetString("SelectionRadioBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string SettingsText {
+            get {
+                return ResourceManager.GetString("SettingsText", resourceCulture);
             }
         }
         

@@ -14,7 +14,7 @@
         <Grid x:Name="Base">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
-                <ColumnDefinition />
+                <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
@@ -26,29 +26,56 @@
                 <DockPanel
                     x:Name="LeftControlMenu"
                     DockPanel.Dock="Top"
+                    Button.Click="ControlMenuEvents"
                     Background="{StaticResource DarkGreyColor}"
                     LastChildFill="False">
-                    <Label
+                    <TextBlock
                         x:Name="TopLeftText"
                         DockPanel.Dock="Left"
                         Style="{StaticResource TopBottomLabelStyle}"
-                        Content="{x:Static local:resources.InputLabel}" />
+                        Text="{x:Static local:resources.InputLabel}" />
 
-                    <Button x:Name="CopyButtonLeft" DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.CopyButton}" />
-                    <Button x:Name="ClearButtonLeft" DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.ClearButton}" />
-                    <Button x:Name="SaveButtonLeft" DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.SaveButton}" />
-                    <Button x:Name="OpenFileButtonLeft" DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.OpenButton}" />
-                    <Button x:Name="SampleButton" DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.SampleLabel}" FontStyle="Italic" />
+                    <Button x:Name="LeftFullScreenButt"
+                            Tag="FullScreen"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_fullscreen.png" />
+                    </Button>
+                    <Button x:Name="LeftCopyButt"
+                            Tag="Copy"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_copy.png" />
+                    </Button>
+                    <Button x:Name="LeftClearButt"
+                            Tag="Clear"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_clear.png" />
+                    </Button>
+                    <Button x:Name="LeftSaveButt"
+                            Tag="Save"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_save.png" />
+                    </Button>
+                    <Button x:Name="LeftOpenButt"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_open.png" />
+                    </Button>
+                    <Button x:Name="SampleButton"
+                            DockPanel.Dock="Right"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="White"
+                            Content="{x:Static local:resources.SampleLabel}"
+                            FontStyle="Italic" />
                 </DockPanel>
-                
+
                 <Grid x:Name="BottomPanelInputWin"
                       DockPanel.Dock="Bottom"
-                      Background="{StaticResource LightGreyColor}">
+                      Background="{StaticResource DarkGreyColor}">
                     <Button x:Name="ChangeLanguageButton"
                             Background="Transparent"
                             BorderThickness="0"
@@ -57,9 +84,10 @@
                             Click="ChangeLanguage">
                         <Image Source="res/icons/icon_ua_or_usa.jpg" Width="30" Height="20" />
                     </Button>
-                    <Label Content=" " FontStyle="Italic" HorizontalAlignment="Right"/>
+                    <TextBlock Text=" " Visibility="Hidden" FontStyle="Italic" HorizontalAlignment="Right" />
 
                 </Grid>
+
                 <TextBox x:Name="InputText"
                          TextWrapping="Wrap"
                          VerticalScrollBarVisibility="Auto"
@@ -67,97 +95,146 @@
             </DockPanel>
 
 
-            <StackPanel
+            <DockPanel
                 x:Name="OptionWin"
                 Grid.Column="1"
-                Background="Bisque">
+                Background="Bisque"
+                LastChildFill="True">
+
+                <Border
+                    DockPanel.Dock="Top"
+                    Height="{StaticResource PanelHeight}"
+                    Background="{StaticResource DarkGreyColor}"
+                    CornerRadius="{StaticResource ZeroZeroTenTenCorner}">
+
+                    <Label
+                        Content="{x:Static local:resources.SettingsText}"
+                        FontStyle="Italic"
+                        FontSize="{StaticResource SettingsTextFontSize}"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" />
+                </Border>
+
+                <Border
+                    DockPanel.Dock="Bottom"
+                    Background="{StaticResource DarkGreyColor}"
+                    Margin="{StaticResource ZeroFiveTwoZerosMargin}"
+                    CornerRadius="{StaticResource TenTenZeroZeroCorner}">
+                    <StackPanel
+                        HorizontalAlignment="Stretch"
+                        Height="{StaticResource PanelHeight}">
+                        <TextBlock x:Name="CopyToClipboardText"
+                                   Text="{x:Static local:resources.CopyClipboardMessage}"
+                                   Style="{StaticResource StatusBottomTextStyle}" />
+                        <TextBlock x:Name="SaveFileText"
+                                   Text="{x:Static local:resources.FileSaveText}"
+                                   Style="{StaticResource StatusBottomTextStyle}" />
+                    </StackPanel>
+                </Border>
                 <Border
                     Background="GhostWhite"
                     BorderBrush="Silver"
                     BorderThickness="1"
-                    CornerRadius="10"
-                    Margin="5">
-                    <StackPanel>
-                        <StackPanel
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="10 5 10 10">
+                    CornerRadius="{StaticResource FourTensCorner}"
+                    Margin="{StaticResource FourFivesMargin}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  CanContentScroll="True">
+                        <StackPanel>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="{StaticResource FourTensMargin}">
 
-                            <RadioButton
-                                GroupName="direction"
-                                Content="0-9"
-                                IsChecked="True"
-                                Margin="0 0 25 0" />
-                            <RadioButton
-                                GroupName="direction"
-                                Content="9-0" />
+                                <RadioButton x:Name="AscendingRadioButt"
+                                             GroupName="direction"
+                                             Content="{x:Static local:resources.Ascending}"
+                                             IsChecked="True"
+                                             Margin="{StaticResource OOTwentyFiveOMargin}" />
+                                <RadioButton x:Name="DescendingRadionButt"
+                                             GroupName="direction"
+                                             Content="{x:Static local:resources.Descending}" />
+                            </StackPanel>
+                            <ComboBox x:Name="TypeComboBox"
+                                      HorizontalAlignment="Stretch"
+                                      Margin="{StaticResource FourTensMargin}">
+
+                                <ComboBoxItem x:Name="EngComboBox"
+                                              IsSelected="True"
+                                              Content="{x:Static local:resources.EnglishLettersRationBut}" />
+                                <ComboBoxItem x:Name="UaComboBox"
+                                              Content="{x:Static local:resources.UkrainianLettersRationBut}" />
+                                <ComboBoxItem x:Name="BinComboBox"
+                                              Content="{x:Static local:resources.BinaryNumRatioBut}" />
+                                <ComboBoxItem x:Name="DecComboBox"
+                                              Content="{x:Static local:resources.DecimalNumRationBut}" />
+                                <ComboBoxItem x:Name="HexComboBox"
+                                              Content="{x:Static local:resources.HexadecimalNumRatioBut}" />
+                                <ComboBoxItem x:Name="LenComboBox"
+                                              Content="{x:Static local:resources.LengthWordRatioBut}" />
+                            </ComboBox>
+
+                            <CheckBox
+                                x:Name="IgnoreDuplicateCheckBox"
+                                IsChecked="False"
+                                IsThreeState="False"
+                                Content="{x:Static local:resources.IgnoreDuplicateCheckBox}"
+                                HorizontalAlignment="Center"
+                                Margin="{StaticResource FourTensMargin}" />
+
+                            <ComboBox x:Name="MethodComboBox"
+                                      HorizontalAlignment="Stretch"
+                                      Margin="{StaticResource FourTensMargin}">
+
+                                <ComboBoxItem x:Name="BubbleComboBox"
+                                              IsSelected="True"
+                                              Content="{x:Static local:resources.BubbleRadioBut}" />
+                                <ComboBoxItem x:Name="CocktailComboBox"
+                                              Content="{x:Static local:resources.CocktailRadioBut}" />
+                                <ComboBoxItem x:Name="InsertionComboBox"
+                                              Content="{x:Static local:resources.InsertionRadioBut}" />
+                                <ComboBoxItem x:Name="MergeComboBox"
+                                              Content="{x:Static local:resources.MergeRadioBut}" />
+                                <ComboBoxItem x:Name="SelectionComboBox"
+                                              Content="{x:Static local:resources.SelectionRadioBut}" />
+                            </ComboBox>
+
+                            <Button
+                                x:Name="SortButton"
+                                Content="{x:Static local:resources.SortButton}"
+                                FontSize="{StaticResource SortButtonFontSize}"
+                                FontWeight="Bold"
+                                Margin="{StaticResource FourTensMargin}"
+                                BorderThickness="2.5"
+                                Background="{StaticResource GreenColor}"
+                                Foreground="White">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="{StaticResource FourTensCorner}" />
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <Label
+                                Content="{x:Static local:resources.InputSeparatorLabel}"
+                                Style="{StaticResource SeparatorStyle}"
+                                Margin="{StaticResource TenTenZeroTenMargin}" />
+                            <TextBox x:Name="InputSeparatorText"
+                                     Text=" "
+                                     HorizontalAlignment="Stretch"
+                                     Margin="{StaticResource TenZeroTenTenMargin}" />
+                            <Label
+                                Content="{x:Static local:resources.OutputSeparatorLabel}"
+                                Style="{StaticResource SeparatorStyle}"
+                                Margin="{StaticResource TenTenZeroTenMargin}" />
+                            <TextBox x:Name="OutputSeparatorText"
+                                     Text=" "
+                                     HorizontalAlignment="Stretch"
+                                     Margin="{StaticResource TenZeroTenTenMargin}" />
                         </StackPanel>
-                        <ComboBox
-                            HorizontalAlignment="Stretch"
-                            Margin="{StaticResource FourTenMargin}">
-
-                            <ComboBoxItem IsSelected="True"
-                                          Content="{x:Static local:resources.EnglishLettersRationBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.UkrainianLettersRationBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.BinaryNumRatioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.DecimalNumRationBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.HexadecimalNumRatioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.LengthWordRatioBut}" />
-                        </ComboBox>
-
-                        <CheckBox
-                            x:Name="IgnoreDuplicate"
-                            IsChecked="False"
-                            IsThreeState="False"
-                            Content="{x:Static local:resources.IgnoreDuplicateCheckBox}"
-                            HorizontalAlignment="Center"
-                            Margin="{StaticResource FourTenMargin}" />
-
-                        <ComboBox
-                            HorizontalAlignment="Stretch"
-                            Margin="{StaticResource FourTenMargin}">
-
-                            <ComboBoxItem IsSelected="True" Content="{x:Static local:resources.BubbleRadioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.CocktailRadioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.InsertionRadioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.MergeRadioBut}" />
-                            <ComboBoxItem Content="{x:Static local:resources.SelectionRadioBut}" />
-                        </ComboBox>
-
-                        <Button
-                            x:Name="SortButton"
-                            Content="{x:Static local:resources.SortButton}"
-                            FontSize="{StaticResource SortButtonFontSize}"
-                            FontWeight="Bold"
-                            Margin="{StaticResource FourTenMargin}"
-                            BorderThickness="2.5"
-                            Style="{StaticResource ButtonSortStyle}">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="10" />
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-
-                        <Label
-                            Content="{x:Static local:resources.InputSeparatorLabel}"
-                            Style="{StaticResource SeparatorStyle}"
-                            Margin="10 10 0 10" />
-                        <TextBox x:Name="InputSeparatorText"
-                                 Text=" "
-                                 HorizontalAlignment="Stretch"
-                                 Margin="10 0 10 10" />
-                        <Label
-                            Content="{x:Static local:resources.OutputSeparatorLabel}"
-                            Style="{StaticResource SeparatorStyle}"
-                            Margin="10 10 0 10" />
-                        <TextBox x:Name="OutputSeparatorText"
-                                 Text=" "
-                                 HorizontalAlignment="Stretch"
-                                 Margin="10 0 10 10" />
-                    </StackPanel>
+                    </ScrollViewer>
                 </Border>
-            </StackPanel>
+            </DockPanel>
 
 
             <DockPanel x:Name="OutputWin"
@@ -165,27 +242,43 @@
                        LastChildFill="True">
                 <DockPanel x:Name="RightControlMenu"
                            DockPanel.Dock="Top"
+                           Button.Click="ControlMenuEvents"
                            Background="{StaticResource DarkGreyColor}"
                            LastChildFill="False">
-                    <Label x:Name="TopRightLabel"
-                           DockPanel.Dock="Left"
-                           Style="{StaticResource TopBottomLabelStyle}"
-                           Content="{x:Static local:resources.OutputLabel}" />
+                    <TextBlock x:Name="TopRightLabel"
+                               DockPanel.Dock="Left"
+                               Style="{StaticResource TopBottomLabelStyle}"
+                               Text="{x:Static local:resources.OutputLabel}" />
 
-                    <Button x:Name="CopyButtonRight"
-                            DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.CopyButton}" />
-                    <Button x:Name="ClearButtonRight"
-                            DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.ClearButton}" />
-                    <Button x:Name="SaveButtonRight"
-                            DockPanel.Dock="Right"
-                            Content="{x:Static local:resources.SaveButton}" />
+                    <Button x:Name="RightFullscreenButt"
+                            Tag="Fullscreen"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_fullscreen.png" />
+                    </Button>
+                    <Button x:Name="RightCopyButt"
+                            Tag="Copy"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_copy.png" />
+                    </Button>
+                    <Button x:Name="RightClearButt"
+                            Tag="Clear"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_clear.png" />
+                    </Button>
+                    <Button x:Name="RightSaveButt"
+                            Tag="Save"
+                            Style="{StaticResource ImageButtonStyle}"
+                            DockPanel.Dock="Right">
+                        <Image Source="res/icons/icon_save.png" />
+                    </Button>
                 </DockPanel>
 
                 <Grid x:Name="StatisticBar"
                       DockPanel.Dock="Bottom"
-                      Background="{StaticResource LightGreyColor}">
+                      Background="{StaticResource DarkGreyColor}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
@@ -200,9 +293,9 @@
                                Style="{StaticResource TopBottomLabelStyle}"
                                Content="{x:Static local:resources.LengthNumLabel}" />
                         <Label x:Name="LenghtNumberText"
-                               Style="{StaticResource TopBottomLabelStyle}"
                                Content="123"
-                               Margin="5 0 0 0" />
+                               Style="{StaticResource TopBottomLabelStyle}"
+                               Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
 
                     <StackPanel
@@ -214,9 +307,9 @@
                                Style="{StaticResource TopBottomLabelStyle}"
                                Content="{x:Static local:resources.PermutationLabel}" />
                         <Label x:Name="PermutationNumberText"
-                               Style="{StaticResource TopBottomLabelStyle}"
                                Content="123"
-                               Margin="5 0 0 0" />
+                               Style="{StaticResource TopBottomLabelStyle}"
+                               Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
 
                     <StackPanel
@@ -230,7 +323,7 @@
                         <Label x:Name="TimeNumberText"
                                Style="{StaticResource TopBottomLabelStyle}"
                                Content="123"
-                               Margin="5 0 0 0" />
+                               Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
 
                 </Grid>

@@ -29,8 +29,13 @@ namespace Sorter
 
         public MenuWindow(String culture)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
             InitializeComponent();
+        }
+
+        private void AddHandlersToButtons()
+        {
+            // LeftControlMenu.AddHandler(Button.Click, new RoutedEventHandler(ControlMenuEvents)));
         }
 
         private void ChangeLanguage(object sender, RoutedEventArgs e)
@@ -48,6 +53,42 @@ namespace Sorter
 
             menuWindow.Show();
             Close();
+        }
+
+        private void ControlMenuEvents(object sender, RoutedEventArgs e)
+        {
+            object id = e.OriginalSource;
+            object tag = ((Button) id).Tag;
+            // switch (tag)
+            // {
+            //     case "Clear":
+            //         if (id.Equals(ClearButtonLeft))
+            //         {
+            //             InputText.Text = "";
+            //         }
+            //
+            //         if (id.Equals(ClearButtonRight))
+            //         {
+            //             OutputText.Text = "";
+            //         }
+            //
+            //         break;
+            //     case "Copy":
+            //         if (id.Equals(CopyButtonLeft))
+            //         {
+            //             Clipboard.SetText(InputText.Text);
+            //         }
+            //
+            //         if (id.Equals(CopyButtonRight))
+            //         {
+            //             Clipboard.SetText(OutputText.Text);
+            //         }
+            //
+            //         MessageBox.Show(localization.resources.CopyClipboardMessage);
+            //         
+            //         
+            //         break;
+            // }
         }
     }
 }

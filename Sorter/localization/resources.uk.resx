@@ -41,7 +41,7 @@
         <value>скопіювати</value>
     </data>
     <data name="SortButton" xml:space="preserve">
-        <value>Відсортувати</value>
+        <value>Сортувати</value>
     </data>
     <data name="IgnoreDuplicateCheckBox" xml:space="preserve">
         <value>Ігнорувати Дублікати</value>
@@ -71,13 +71,13 @@
         <value>Розмір слів</value>
     </data>
     <data name="LengthNumLabel" xml:space="preserve">
-        <value>довжина</value>
+        <value>довж</value>
     </data>
     <data name="TimeLabel" xml:space="preserve">
         <value>час</value>
     </data>
     <data name="PermutationLabel" xml:space="preserve">
-        <value>перестановки</value>
+        <value>перест</value>
     </data>
     <data name="Title" xml:space="preserve">
         <value>Сортувальник</value>
@@ -96,5 +96,20 @@
     </data>
     <data name="SelectionRadioBut" xml:space="preserve">
         <value>Сортування вибіркою</value>
+    </data>
+    <data name="CopyClipboardMessage" xml:space="preserve">
+        <value>Скопійовано до буферу обміну</value>
+    </data>
+    <data name="FileSaveText" xml:space="preserve">
+        <value>Файл збережений</value>
+    </data>
+    <data name="Ascending" xml:space="preserve">
+        <value>А-Я</value>
+    </data>
+    <data name="Descending" xml:space="preserve">
+        <value>Я-А</value>
+    </data>
+    <data name="SettingsText" xml:space="preserve">
+        <value>Налаштування</value>
     </data>
 </root>

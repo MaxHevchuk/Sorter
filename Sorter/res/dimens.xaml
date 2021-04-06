@@ -1,11 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    
-    <sys:Double x:Key="MinWindowWidth">800</sys:Double>
-    <sys:Double x:Key="MinWindowHeight">400</sys:Double>
+
+    <sys:Double x:Key="MinWindowWidth">550</sys:Double>
+    <sys:Double x:Key="MinWindowHeight">200</sys:Double>
+
+    <sys:Double x:Key="PanelHeight">37</sys:Double>
     
     <sys:Double x:Key="SortButtonFontSize">17</sys:Double>
-    <Thickness x:Key="FourTenMargin">10 10 10 10</Thickness>
+    <sys:Double x:Key="SettingsTextFontSize">18</sys:Double>
+
+    <Thickness x:Key="TenTenZeroTenMargin">10 10 0 10</Thickness>
+    <Thickness x:Key="TenZeroTenTenMargin">10 0 10 10</Thickness>
+    <Thickness x:Key="FourTensMargin">10 10 10 10</Thickness>
+    <Thickness x:Key="FourFivesMargin">5</Thickness>
+    <Thickness x:Key="FiveThreeZerosMargin">5 0 0 0 </Thickness>
+    <Thickness x:Key="ZeroFiveTwoZerosMargin">0 5 0 0</Thickness>
+    <Thickness x:Key="OOTwentyFiveOMargin">0 0 25 0</Thickness>
     
+    <CornerRadius x:Key="TenTenZeroZeroCorner">10 10 0 0</CornerRadius>
+    <CornerRadius x:Key="ZeroZeroTenTenCorner">0 0 10 10</CornerRadius>
+    <CornerRadius x:Key="FourTensCorner">10</CornerRadius>
+
 </ResourceDictionary>
