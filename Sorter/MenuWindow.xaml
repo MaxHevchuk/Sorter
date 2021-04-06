@@ -45,6 +45,21 @@
                     <Button x:Name="SampleButton" DockPanel.Dock="Right"
                             Content="{x:Static local:resources.SampleLabel}" FontStyle="Italic" />
                 </DockPanel>
+                
+                <Grid x:Name="BottomPanelInputWin"
+                      DockPanel.Dock="Bottom"
+                      Background="{StaticResource LightGreyColor}">
+                    <Button x:Name="ChangeLanguageButton"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Width="30"
+                            HorizontalAlignment="Left"
+                            Click="ChangeLanguage">
+                        <Image Source="res/icons/icon_ua_or_usa.jpg" Width="30" Height="20" />
+                    </Button>
+                    <Label Content=" " FontStyle="Italic" HorizontalAlignment="Right"/>
+
+                </Grid>
                 <TextBox x:Name="InputText"
                          TextWrapping="Wrap"
                          VerticalScrollBarVisibility="Auto"
