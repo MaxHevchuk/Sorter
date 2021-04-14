@@ -81,7 +81,7 @@
                             BorderThickness="0"
                             Width="30"
                             HorizontalAlignment="Left"
-                            Click="ChangeLanguage">
+                            Click="ChangeLocalization">
                         <Image Source="res/icons/icon_ua_or_usa.jpg" Width="30" Height="20" />
                     </Button>
                     <TextBlock Text=" " Visibility="Hidden" FontStyle="Italic" HorizontalAlignment="Right" />
