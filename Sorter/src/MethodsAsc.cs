@@ -97,16 +97,16 @@ namespace Sorter
 
             for (int i = 1; i < array.Length; i++)
             {
-                int key = array[i];
-                int j = i;
-                while (j > 1 && array[j - 1] > key)
+                int value = array[i];
+                int j = i - 1;
+                while (j >= 0 && array[j].CompareTo(value) > 0)
                 {
-                    Swap(ref array[j - 1], ref array[j]);
+                    Swap(ref array[j + 1], ref array[j]);
                     permutations++;
                     j--;
                 }
 
-                array[j] = key;
+                array[j + 1] = value;
             }
 
             return permutations;
