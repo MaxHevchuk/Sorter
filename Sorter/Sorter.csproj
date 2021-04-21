@@ -23,6 +23,7 @@
       <Resource Include="res\icons\icon_clear.png" />
       <None Remove="res\icons\icon_copy.png" />
       <Resource Include="res\icons\icon_copy.png" />
+      <Resource Include="res\icons\icon_fullscreen_out.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -56,6 +57,12 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>resources.en.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\Debug\net5.0-windows\App.baml" />
+      <Content Include="obj\Debug\net5.0-windows\LanguageWindow.baml" />
+      <Content Include="obj\Debug\net5.0-windows\MenuWindow.baml" />
     </ItemGroup>
 
 </Project>
