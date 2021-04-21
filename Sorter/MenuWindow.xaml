@@ -8,14 +8,20 @@
         MinHeight="{StaticResource MinWindowHeight}"
         MinWidth="{StaticResource MinWindowWidth}"
         Title="{x:Static local:resources.Title}"
-        Height="450" Width="850"
+        Height="500" Width="850"
         Icon="res/icons/icon_sorter.ico">
+
+    <Window.Resources>
+        <Image x:Key="FullscreenOut" Source="res/icons/icon_fullscreen_out.png" />
+        <Image x:Key="FullscreenIn" Source="res/icons/icon_fullscreen.png" />
+    </Window.Resources>
+
     <Grid>
         <Grid x:Name="Base">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="1.5*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition x:Name="LeftCol" Width="2*" />
+                <ColumnDefinition x:Name="CenterCol" Width="1.5*" />
+                <ColumnDefinition x:Name="RightCol" Width="2*" />
             </Grid.ColumnDefinitions>
 
 
@@ -26,7 +32,6 @@
                 <DockPanel
                     x:Name="LeftControlMenu"
                     DockPanel.Dock="Top"
-                    Button.Click="ControlMenuEvents"
                     Background="{StaticResource DarkGreyColor}"
                     LastChildFill="False">
                     <TextBlock
@@ -34,37 +39,38 @@
                         DockPanel.Dock="Left"
                         Style="{StaticResource TopBottomLabelStyle}"
                         Text="{x:Static local:resources.InputLabel}" />
-
                     <Button x:Name="LeftFullScreenButt"
-                            Tag="FullScreen"
+                            Click="BtnFullscreen"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_fullscreen.png" />
                     </Button>
                     <Button x:Name="LeftCopyButt"
-                            Tag="Copy"
+                            Click="BtnCopyText"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_copy.png" />
                     </Button>
                     <Button x:Name="LeftClearButt"
-                            Tag="Clear"
+                            Click="BtnClearText"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_clear.png" />
                     </Button>
                     <Button x:Name="LeftSaveButt"
-                            Tag="Save"
+                            Click="BtnSaveFile"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_save.png" />
                     </Button>
                     <Button x:Name="LeftOpenButt"
+                            Click="BtnOpenFile"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_open.png" />
                     </Button>
                     <Button x:Name="SampleButton"
+                            Click="BtnSample"
                             DockPanel.Dock="Right"
                             Background="Transparent"
                             BorderBrush="Transparent"
@@ -81,7 +87,7 @@
                             BorderThickness="0"
                             Width="30"
                             HorizontalAlignment="Left"
-                            Click="ChangeLocalization">
+                            Click="BtnChangeLocalization">
                         <Image Source="res/icons/icon_ua_or_usa.jpg" Width="30" Height="20" />
                     </Button>
                     <TextBlock Text=" " Visibility="Hidden" FontStyle="Italic" HorizontalAlignment="Right" />
@@ -151,13 +157,14 @@
                                              Content="{x:Static local:resources.Ascending}"
                                              IsChecked="True"
                                              Margin="{StaticResource OOTwentyFiveOMargin}" />
-                                <RadioButton x:Name="DescendingRadionButt"
+                                <RadioButton x:Name="DescendingRadioButt"
                                              GroupName="direction"
                                              Content="{x:Static local:resources.Descending}" />
                             </StackPanel>
                             <ComboBox x:Name="TypeComboBox"
                                       HorizontalAlignment="Stretch"
-                                      Margin="{StaticResource FourTensMargin}">
+                                      Margin="{StaticResource FourTensMargin}"
+                                      SelectionChanged="TypeComboBox_OnSelectionChanged">
 
                                 <ComboBoxItem x:Name="EngComboBox"
                                               IsSelected="True"
@@ -184,7 +191,8 @@
 
                             <ComboBox x:Name="MethodComboBox"
                                       HorizontalAlignment="Stretch"
-                                      Margin="{StaticResource FourTensMargin}">
+                                      Margin="{StaticResource FourTensMargin}"
+                                      SelectionChanged="MethodComboBox_OnSelectionChanged">
 
                                 <ComboBoxItem x:Name="BubbleComboBox"
                                               IsSelected="True"
@@ -201,6 +209,7 @@
 
                             <Button
                                 x:Name="SortButton"
+                                Click="BtnSort"
                                 Content="{x:Static local:resources.SortButton}"
                                 FontSize="{StaticResource SortButtonFontSize}"
                                 FontWeight="Bold"
@@ -220,7 +229,9 @@
                                 Style="{StaticResource SeparatorStyle}"
                                 Margin="{StaticResource TenTenZeroTenMargin}" />
                             <TextBox x:Name="InputSeparatorText"
-                                     Text=" "
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     AcceptsReturn="True"
                                      HorizontalAlignment="Stretch"
                                      Margin="{StaticResource TenZeroTenTenMargin}" />
                             <Label
@@ -228,7 +239,9 @@
                                 Style="{StaticResource SeparatorStyle}"
                                 Margin="{StaticResource TenTenZeroTenMargin}" />
                             <TextBox x:Name="OutputSeparatorText"
-                                     Text=" "
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     AcceptsReturn="True"
                                      HorizontalAlignment="Stretch"
                                      Margin="{StaticResource TenZeroTenTenMargin}" />
                         </StackPanel>
@@ -242,7 +255,6 @@
                        LastChildFill="True">
                 <DockPanel x:Name="RightControlMenu"
                            DockPanel.Dock="Top"
-                           Button.Click="ControlMenuEvents"
                            Background="{StaticResource DarkGreyColor}"
                            LastChildFill="False">
                     <TextBlock x:Name="TopRightLabel"
@@ -251,25 +263,25 @@
                                Text="{x:Static local:resources.OutputLabel}" />
 
                     <Button x:Name="RightFullscreenButt"
-                            Tag="Fullscreen"
+                            Click="BtnFullscreen"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_fullscreen.png" />
                     </Button>
                     <Button x:Name="RightCopyButt"
-                            Tag="Copy"
+                            Click="BtnCopyText"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_copy.png" />
                     </Button>
                     <Button x:Name="RightClearButt"
-                            Tag="Clear"
+                            Click="BtnClearText"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_clear.png" />
                     </Button>
                     <Button x:Name="RightSaveButt"
-                            Tag="Save"
+                            Click="BtnSaveFile"
                             Style="{StaticResource ImageButtonStyle}"
                             DockPanel.Dock="Right">
                         <Image Source="res/icons/icon_save.png" />
@@ -293,7 +305,7 @@
                                Style="{StaticResource TopBottomLabelStyle}"
                                Content="{x:Static local:resources.LengthNumLabel}" />
                         <Label x:Name="LenghtNumberText"
-                               Content="123"
+                               Content="0"
                                Style="{StaticResource TopBottomLabelStyle}"
                                Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
@@ -307,7 +319,7 @@
                                Style="{StaticResource TopBottomLabelStyle}"
                                Content="{x:Static local:resources.PermutationLabel}" />
                         <Label x:Name="PermutationNumberText"
-                               Content="123"
+                               Content="0"
                                Style="{StaticResource TopBottomLabelStyle}"
                                Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
@@ -322,7 +334,7 @@
                                Content="{x:Static local:resources.TimeLabel}" />
                         <Label x:Name="TimeNumberText"
                                Style="{StaticResource TopBottomLabelStyle}"
-                               Content="123"
+                               Content="0 ticks"
                                Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
 
