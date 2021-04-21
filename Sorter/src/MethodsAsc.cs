@@ -1,5 +1,11 @@
+using System;
+using System.Diagnostics;
+
 namespace Sorter
 {
+    /// <summary>
+    /// Provides the ability to sort an array of data in different methods in ascending order
+    /// </summary>
     public class MethodsAsc : IMethods
     {
         /// <summary>
@@ -7,9 +13,9 @@ namespace Sorter
         /// </summary>
         /// <param name="a">The first integer variable</param>
         /// <param name="b">The second integer variable</param>
-        private void Swap(ref int a, ref int b)
+        private void Swap<T>(ref T a, ref T b) where T : IComparable<T>
         {
-            int temp = a;
+            T temp = a;
             a = b;
             b = temp;
         }
@@ -18,18 +24,20 @@ namespace Sorter
         /// Sorts the data array using the bubble method and returns the number of inversions in the array.
         /// </summary>
         /// <param name="array">Integer data array.</param>
+        /// <param name="time"></param>
         /// <returns>Number of inversions in the array.</returns>
-        public int BubbleSort(ref int[] array)
+        public int BubbleSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
             int arrayLenght = array.Length;
             int permutations = 0;
             bool swapped = false;
 
+            Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < arrayLenght - 1; i++)
             {
                 for (int j = 0; j < arrayLenght - i - 1; j++)
                 {
-                    if (array[j] > array[j + 1])
+                    if (array[j].CompareTo(array[j + 1]) > 0)
                     {
                         Swap(ref array[j], ref array[j + 1]);
                         permutations++;
@@ -41,6 +49,9 @@ namespace Sorter
                 if (!swapped) break;
             }
 
+            stopwatch.Stop();
+
+            time = stopwatch.ElapsedTicks;
             return permutations;
         }
 
@@ -49,18 +60,19 @@ namespace Sorter
         /// </summary>
         /// <param name="array">Integer data array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int CocktailSort(ref int[] array)
+        public int CocktailSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
             int arrayLenght = array.Length;
             int permutations = 0;
             bool swapped = false;
 
+            Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < arrayLenght / 2; i++)
             {
                 // from left to right
                 for (int j = i; j < arrayLenght - i - 1; j++)
                 {
-                    if (array[j] > array[j + 1])
+                    if (array[j].CompareTo(array[j + 1]) > 0)
                     {
                         Swap(ref array[j], ref array[j + 1]);
                         permutations++;
@@ -71,7 +83,7 @@ namespace Sorter
                 // from right to left
                 for (int j = arrayLenght - 2 - i; j > i; j--)
                 {
-                    if (array[j - 1] > array[j])
+                    if (array[j - 1].CompareTo(array[j]) > 0)
                     {
                         Swap(ref array[j - 1], ref array[j]);
                         permutations++;
@@ -83,6 +95,8 @@ namespace Sorter
                 if (!swapped) break;
             }
 
+            stopwatch.Stop();
+            time = stopwatch.ElapsedTicks;
             return permutations;
         }
 
@@ -91,13 +105,14 @@ namespace Sorter
         /// </summary>
         /// <param name="array">Integer data array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int InsertionSort(ref int[] array)
+        public int InsertionSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
             int permutations = 0;
 
+            Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 1; i < array.Length; i++)
             {
-                int value = array[i];
+                T value = array[i];
                 int j = i - 1;
                 while (j >= 0 && array[j].CompareTo(value) > 0)
                 {
@@ -109,6 +124,9 @@ namespace Sorter
                 array[j + 1] = value;
             }
 
+            stopwatch.Stop();
+            time = stopwatch.ElapsedTicks;
+
             return permutations;
         }
 
@@ -117,10 +135,16 @@ namespace Sorter
         /// </summary>
         /// <param name="array">Integer data array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int MergeSort(ref int[] array)
+        public int MergeSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
-            int[] temp = new int[array.Length];
-            return MergeSort(ref array, temp, 0, array.Length - 1);
+            T[] temp = new T[array.Length];
+
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            int permutation = MergeSort(ref array, temp, 0, array.Length - 1);
+            stopwatch.Stop();
+            time = stopwatch.ElapsedTicks;
+
+            return permutation;
         }
 
         ///<summary>
@@ -131,7 +155,7 @@ namespace Sorter
         /// <param name="left">The first index of the temporary array.</param>
         /// <param name="right">The last index of the temporary array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int MergeSort(ref int[] array, int[] temp, int left, int right)
+        public int MergeSort<T>(ref T[] array, T[] temp, int left, int right) where T : IComparable<T>
         {
             int permutations = 0;
             if (right > left)
@@ -159,7 +183,7 @@ namespace Sorter
         /// <param name="mid">The middle index of the temporary arrray.</param>
         /// <param name="right">The last index of the temporary array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int Merge(ref int[] array, int[] temp, int left, int mid, int right)
+        public int Merge<T>(ref T[] array, T[] temp, int left, int mid, int right) where T : IComparable<T>
         {
             {
                 int permutations = 0;
@@ -169,7 +193,7 @@ namespace Sorter
 
                 while (i <= mid - 1 && j <= right)
                 {
-                    if (array[i] <= array[j])
+                    if (array[i].CompareTo(array[j]) < 0)
                     {
                         temp[k++] = array[i++];
                     }
@@ -200,22 +224,26 @@ namespace Sorter
         /// </summary>
         /// <param name="array">Integer data array.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public int SelectionSort(ref int[] array)
+        public int SelectionSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
             int arrayLength = array.Length;
             int permutations = 0;
 
+            Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < arrayLength - 1; i++)
             {
                 // Find the minimum element in unsorted array
                 int minIndex = i;
                 for (int j = i + 1; j < arrayLength; j++)
-                    if (array[j] < array[minIndex])
+                    if (array[j].CompareTo(array[minIndex]) < 0)
                         minIndex = j;
 
                 Swap(ref array[minIndex], ref array[i]);
                 permutations++;
             }
+
+            stopwatch.Stop();
+            time = stopwatch.ElapsedTicks;
 
             return permutations;
         }
