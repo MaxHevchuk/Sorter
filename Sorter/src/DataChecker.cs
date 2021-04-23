@@ -1,14 +1,18 @@
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 
 namespace Sorter
 {
+    /// <summary>
+    /// Provide methods for checking if data matches the given data types. 
+    /// </summary>
     public static class DataChecker
     {
         public static bool CheckForCorrect(string data, Enum dataType, string separator)
         {
-            if (data == null || data.Length <= 0)
+            if (data is not {Length: > 0})
             {
                 MessageBox.Show("Please, enter data in the field.", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Information);
@@ -37,86 +41,25 @@ namespace Sorter
             }
         }
 
-        private static bool CheckIfElemIsEng(string[] data)
-        {
-            return CheckIfElemIsLetters(data, Eng.a);
-        }
+        private static bool CheckIfElemIsEng(string[] data) => CheckIfElemIsLetters(data, Eng.A);
 
-        private static bool CheckIfElemIsUa(string[] data)
-        {
-            return CheckIfElemIsLetters(data, Ua.а);
-        }
+        private static bool CheckIfElemIsUa(string[] data) => CheckIfElemIsLetters(data, Ua.А);
 
-        private static bool CheckIfElemIsLetters(string[] data, Enum nameOfEnum)
-        {
-            bool isOk = true;
-            Type typeOfEnum = nameOfEnum.GetType();
-            foreach (string word in data)
-            {
-                if (word.Length <= 1)
-                    isOk &= Enum.IsDefined(typeOfEnum, word);
+        private static bool CheckIfElemIsLetters(string[] data, Enum nameOfEnum) =>
+            data.All(word =>
+                word.ToCharArray().All(letter =>
+                    Enum.IsDefined(nameOfEnum.GetType(), letter.ToString())));
 
-                else
-                {
-                    foreach (char element in word)
-                    {
-                        isOk &= Enum.IsDefined(typeOfEnum, element.ToString());
-                    }
-                }
-            }
+        private static bool CheckIfElemIsBinary(string[] data) =>
+            data.All(word =>
+                word.ToCharArray().All(c =>
+                    c is '0' or '1'));
 
-            return isOk;
-        }
+        private static bool CheckIfElemIsDecimal(string[] data) =>
+            data.All(word => int.TryParse(word, out _));
 
-        private static bool CheckIfElemIsBinary(string[] data)
-        {
-            bool isOk = true;
-            foreach (string number in data)
-            {
-                isOk &= IsBin(number);
-            }
-
-            return isOk;
-        }
-
-        private static bool IsBin(string s)
-        {
-            foreach (var c in s)
-                if (c != '0' && c != '1')
-                    return false;
-            return true;
-        }
-
-        private static bool CheckIfElemIsDecimal(string[] data)
-        {
-            bool isOk = true;
-            foreach (var number in data)
-            {
-                isOk &= IsDecimal(number);
-            }
-
-            return isOk;
-        }
-
-        private static bool IsDecimal(string s) => int.TryParse(s, out _);
-
-        private static bool CheckIfElemIsHex(string[] data)
-        {
-            bool isOk = true;
-            foreach (var number in data)
-            {
-                isOk &= IsHex(number);
-            }
-
-            return isOk;
-        }
-
-        private static bool IsHex(string s) =>
-            int.TryParse(s, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out _);
-
-        // private void CheckIfElemIsSize(string data)
-        // {
-        //     throw new NotImplementedException();
-        // }
+        private static bool CheckIfElemIsHex(string[] data) =>
+            data.All(word =>
+                int.TryParse(word, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out _));
     }
 }
