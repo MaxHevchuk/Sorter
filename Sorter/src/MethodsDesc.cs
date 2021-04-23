@@ -4,15 +4,15 @@ using System.Diagnostics;
 namespace Sorter
 {
     /// <summary>
-    /// Provides the ability to sort an array of data in different methods in descending order
+    /// Provides the ability to sort an array of data in different methods in descending order.
     /// </summary>
     public class MethodsDesc : IMethods
     {
         /// <summary>
-        /// Swaps two integer values.
+        /// Swaps two variables values.
         /// </summary>
-        /// <param name="a">The first integer variable</param>
-        /// <param name="b">The second integer variable</param>
+        /// <param name="a">The first variable.</param>
+        /// <param name="b">The second variable.</param>
         private void Swap<T>(ref T a, ref T b) where T : IComparable<T>
         {
             T temp = a;
@@ -23,7 +23,8 @@ namespace Sorter
         /// <summary>
         /// Sorts the data array using the bubble method and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
+        /// <param name="time">The time it takes to sort the array.</param>
         /// <returns>Number of inversions in the array.</returns>
         public int BubbleSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
@@ -57,7 +58,8 @@ namespace Sorter
         /// <summary>
         /// Sorts the data array using the cocktail method and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
+        /// <param name="time">The time it takes to sort the array.</param>
         /// <returns>Number of inversions in the array.</returns>
         public int CocktailSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
@@ -103,7 +105,8 @@ namespace Sorter
         /// <summary>
         /// Sorts the data array using the insertion method and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
+        /// <param name="time">The time it takes to sort the array.</param>
         /// <returns>Number of inversions in the array.</returns>
         public int InsertionSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
@@ -133,7 +136,8 @@ namespace Sorter
         /// <summary>
         /// Sorts the data array using the merge method and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
+        /// <param name="time">The time it takes to sort the array.</param>
         /// <returns>Number of inversions in the array.</returns>
         public int MergeSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
@@ -149,7 +153,7 @@ namespace Sorter
         ///<summary>
         /// An auxiliary recursive method that sort the input array and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
         /// <param name="temp">Auxiliary temporary array.</param>
         /// <param name="left">The first index of the temporary array.</param>
         /// <param name="right">The last index of the temporary array.</param>
@@ -176,7 +180,7 @@ namespace Sorter
         /// <summary>
         /// Merges two sorted arrays and returns inversion count in the arrays.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
         /// <param name="temp">Auxiliary temporary array.</param>
         /// <param name="left">The first index of the temporary array.</param>
         /// <param name="mid">The middle index of the temporary arrray.</param>
@@ -221,7 +225,8 @@ namespace Sorter
         /// <summary>
         /// Sorts the data array using the selection method and returns the number of inversions in the array.
         /// </summary>
-        /// <param name="array">Integer data array.</param>
+        /// <param name="array">Data array.</param>
+        /// <param name="time">The time it takes to sort the array.</param>
         /// <returns>Number of inversions in the array.</returns>
         public int SelectionSort<T>(ref T[] array, out long time) where T : IComparable<T>
         {
