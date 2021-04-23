@@ -12,6 +12,9 @@ namespace Sorter
 {
     public partial class MenuWindow
     {
+        private const string PathEnumUa = @"..\..\..\res\sample_str.txt";
+        private const string PathEnumEng = @"..\..\..\res\sample_num.txt";
+
         private string _inputData;
         private string _outputData;
         private string[] _tempArray;
@@ -38,7 +41,7 @@ namespace Sorter
             InitializeComponent();
         }
 
-        private MenuWindow(String culture, string data)
+        private MenuWindow(string culture, string data)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
             InitializeComponent();
@@ -86,9 +89,9 @@ namespace Sorter
             }
             else
             {
-                var tempArrayInt = _Convert.ToIntArray(_tempArray, _dataType);
+                var tempArrayInt = MyConvert.ToIntArray(_tempArray, _dataType);
                 _permutation = _methodInt(ref tempArrayInt, out _time);
-                _outputData = _Convert.ToString(tempArrayInt, _dataType, _outputSeparator);
+                _outputData = MyConvert.ToString(tempArrayInt, _dataType, _outputSeparator);
             }
 
 
@@ -128,8 +131,7 @@ namespace Sorter
         private void BtnChangeLocalization(object sender, RoutedEventArgs e)
         {
             new MenuWindow((Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "uk") ? "en" : "uk",
-                    InputText.Text)
-                .Show();
+                InputText.Text).Show();
             Close();
         }
 
@@ -138,35 +140,35 @@ namespace Sorter
             InputText.Text = FileData.OpenFile();
         }
 
-        private async void BtnSaveFile(object sender, RoutedEventArgs e)
+        private void BtnSaveFile(object sender, RoutedEventArgs e)
         {
-            string name = ((Button) sender).Name;
-            TextBox textBox = (name == "LeftSaveButt") ? InputText : OutputText;
+            var name = ((Button) sender).Name;
+            var textBox = (name == "LeftSaveButt") ? InputText : OutputText;
             FileData.SaveFile(textBox.Text);
 
-            TextBlock textBlock = SaveFileText;
-            textBlock.Visibility = Visibility.Visible;
-            textBlock.Background = Brushes.Red;
-            await Task.Delay(3000);
-            textBlock.Visibility = Visibility.Collapsed;
+            ShowStatus(SaveFileText, Brushes.Red);
         }
 
         private void BtnClearText(object sender, RoutedEventArgs e)
         {
-            string name = ((Button) sender).Name;
-            TextBox textBox = (name == "LeftClearButt") ? InputText : OutputText;
-            textBox.Text = String.Empty;
+            var name = ((Button) sender).Name;
+            var textBox = (name == "LeftClearButt") ? InputText : OutputText;
+            textBox.Text = string.Empty;
         }
 
-        private async void BtnCopyText(object sender, RoutedEventArgs e)
+        private void BtnCopyText(object sender, RoutedEventArgs e)
         {
-            string name = ((Button) sender).Name;
-            TextBox textBox = (name == "LeftCopyButt") ? InputText : OutputText;
+            var name = ((Button) sender).Name;
+            var textBox = (name == "LeftCopyButt") ? InputText : OutputText;
             Clipboard.SetText(textBox.Text);
 
-            TextBlock textBlock = CopyToClipboardText;
+            ShowStatus(CopyToClipboardText, Brushes.Green);
+        }
+
+        private async void ShowStatus(TextBlock textBlock, Brush color)
+        {
             textBlock.Visibility = Visibility.Visible;
-            textBlock.Background = Brushes.Green;
+            textBlock.Background = color;
             await Task.Delay(3000);
             textBlock.Visibility = Visibility.Collapsed;
         }
@@ -174,7 +176,7 @@ namespace Sorter
         private void BtnFullscreen(object sender, RoutedEventArgs e)
         {
             var columnDefinition = ((Button) sender).Name == "LeftFullScreenButt" ? LeftCol : RightCol;
-            Button button = (Button) sender;
+            var button = (Button) sender;
 
             if (!_isFullscreen)
             {
@@ -193,7 +195,7 @@ namespace Sorter
             {
                 foreach (var column in Base.ColumnDefinitions)
                 {
-                    string columnName = column.Name;
+                    var columnName = column.Name;
                     if (columnName != columnDefinition.Name)
                     {
                         column.Width = (columnName == CenterCol.Name)
@@ -209,37 +211,31 @@ namespace Sorter
 
         private void TypeComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TypeComboBox.SelectedItem != null)
-            {
-                ComboBoxItem cbi = (ComboBoxItem) TypeComboBox.SelectedItem;
-                if (cbi == UaComboBox) _dataType = DataType.StrUa;
-                else if (cbi == BinComboBox) _dataType = DataType.IntTwo;
-                else if (cbi == DecComboBox) _dataType = DataType.IntTen;
-                else if (cbi == HexComboBox) _dataType = DataType.IntSixteen;
-                else _dataType = DataType.StrEng;
-            }
+            if (TypeComboBox.SelectedItem == null) return;
+
+            var cbi = (ComboBoxItem) TypeComboBox.SelectedItem;
+            if (cbi == UaComboBox) _dataType = DataType.StrUa;
+            else if (cbi == BinComboBox) _dataType = DataType.IntTwo;
+            else if (cbi == DecComboBox) _dataType = DataType.IntTen;
+            else if (cbi == HexComboBox) _dataType = DataType.IntSixteen;
+            else _dataType = DataType.StrEng;
         }
 
         private void MethodComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MethodComboBox.SelectedItem != null)
-            {
-                ComboBoxItem cbi = (ComboBoxItem) MethodComboBox.SelectedItem;
-                if (cbi == CocktailComboBox) _sortingMethod = SortingMethods.Cocktail;
-                else if (cbi == InsertionComboBox) _sortingMethod = SortingMethods.Insertion;
-                else if (cbi == MergeComboBox) _sortingMethod = SortingMethods.Merge;
-                else if (cbi == SelectionComboBox) _sortingMethod = SortingMethods.Merge;
-                else _sortingMethod = SortingMethods.Bubble;
-            }
+            if (MethodComboBox.SelectedItem == null) return;
+
+            var cbi = (ComboBoxItem) MethodComboBox.SelectedItem;
+            if (cbi == CocktailComboBox) _sortingMethod = SortingMethods.Cocktail;
+            else if (cbi == InsertionComboBox) _sortingMethod = SortingMethods.Insertion;
+            else if (cbi == MergeComboBox) _sortingMethod = SortingMethods.Merge;
+            else if (cbi == SelectionComboBox) _sortingMethod = SortingMethods.Merge;
+            else _sortingMethod = SortingMethods.Bubble;
         }
 
         private void BtnSample(object sender, RoutedEventArgs e)
         {
-            string path;
-            path = _dataType is DataType.StrEng or DataType.StrUa
-                ? @"..\..\..\res\sample_str.txt"
-                : @"..\..\..\res\sample_num.txt";
-
+            var path = _dataType is DataType.StrEng or DataType.StrUa ? PathEnumUa : PathEnumEng;
             InputText.Text = File.ReadAllText(path);
         }
     }

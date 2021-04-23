@@ -4,8 +4,12 @@
     <projectFile>Sorter/Sorter.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d92780fd-5834-4a28-8829-3235a6981f05" name="Default Changelist" comment="change type of the input parameters and added stopwatches to each method">
-      <change afterPath="$PROJECT_DIR$/Sorter/src/MyMessageBox.cs" afterDir="false" />
+    <list default="true" id="d92780fd-5834-4a28-8829-3235a6981f05" name="Default Changelist" comment="used LINQ functionality to minimize code">
+      <change beforePath="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorter/src/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorter/src/FileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/FileData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,37 +38,43 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3B/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/MenuWindow.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/28/Enum.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/43/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3A/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsAsc.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B7/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/MenuWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/12/71729c7d/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/10/Regex.Split.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/D/Regex.Cache.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/235/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/C/Regex.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/MenuWindow.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/IMethods.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/9A/DockPanel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/21/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B3/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/IMethods.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsDesc.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/59/35ebcfaa/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/64/903c2b5a/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/f7/4b782093/ReadOnlySpan`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/MenuWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/MenuWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C977CB0D-0AF7-438A-A72E-B47D6601CD8C/D/AnyAll.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/f7/4b782093/ReadOnlySpan`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/64/903c2b5a/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/DataChecker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD3F5EAD-4C75-44CA-9D93-E0A7F6E363B5/3f/9a793994/Application.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1C987A05-35B5-4F01-93EB-EA66887DC2DB/100/ErrorCodes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/28/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsDesc.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sorter/MenuWindow.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B7/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3A/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/FileData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/43/Type.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3B/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/235/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/9A/DockPanel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B3/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/DataChecker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsAsc.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1C987A05-35B5-4F01-93EB-EA66887DC2DB/100/ErrorCodes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/12/71729c7d/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/21/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/26D/MemoryMarshal.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/C/Regex.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/_Convert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/1F/Buffer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/D/Regex.Cache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/10/Regex.Split.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/426/Unsafe.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/59/35ebcfaa/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -82,15 +92,17 @@
       <option value="$PROJECT_DIR$/Sorter/res/sample.txt" />
       <option value="$PROJECT_DIR$/Sorter/res/sample_str.txt" />
       <option value="$PROJECT_DIR$/Sorter/src/IMethods.cs" />
-      <option value="$PROJECT_DIR$/Sorter/src/_Convert.cs" />
-      <option value="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" />
-      <option value="$PROJECT_DIR$/Sorter/src/FileData.cs" />
-      <option value="$PROJECT_DIR$/Sorter/src/DataChecker.cs" />
-      <option value="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" />
-      <option value="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/Sorter/src/MyMessageBox.cs" />
-      <option value="$PROJECT_DIR$/Sorter/MenuWindow.xaml" />
       <option value="$PROJECT_DIR$/Sorter/Sorter.csproj" />
+      <option value="$PROJECT_DIR$/Sorter/MenuWindow.xaml" />
+      <option value="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/Enums.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/_Convert.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/MyConvert.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/DataChecker.cs" />
+      <option value="$PROJECT_DIR$/Sorter/src/FileData.cs" />
+      <option value="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qlWO9ph3bMrWzXghrUSICkKKIN" />
@@ -144,7 +156,9 @@
       <workItem from="1617814630522" duration="4219000" />
       <workItem from="1618336332339" duration="700000" />
       <workItem from="1618425002152" duration="40756000" />
-      <workItem from="1618762780302" duration="67504000" />
+      <workItem from="1618762780302" duration="71034000" />
+      <workItem from="1619201128582" duration="780000" />
+      <workItem from="1619202448867" duration="6555000" />
     </task>
     <task id="LOCAL-00001" summary="add resource files">
       <created>1617655024669</created>
@@ -300,7 +314,28 @@
       <option name="project" value="LOCAL" />
       <updated>1619005989423</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary=".idea files">
+      <created>1619006330254</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1619006330254</updated>
+    </task>
+    <task id="LOCAL-00024" summary="renamed class _Convert.cs to MyConvert.cs and used LINQ functionality to minimize code">
+      <created>1619209269703</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1619209269704</updated>
+    </task>
+    <task id="LOCAL-00025" summary="used LINQ functionality to minimize code">
+      <created>1619209312400</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1619209312400</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +354,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -356,6 +391,9 @@
     <MESSAGE value="created class that works with files" />
     <MESSAGE value="changed type of the input parameters" />
     <MESSAGE value="change type of the input parameters and added stopwatches to each method" />
-    <option name="LAST_COMMIT_MESSAGE" value="change type of the input parameters and added stopwatches to each method" />
+    <MESSAGE value=".idea files" />
+    <MESSAGE value="renamed class _Convert.cs to MyConvert.cs and used LINQ functionality to minimize code" />
+    <MESSAGE value="used LINQ functionality to minimize code" />
+    <option name="LAST_COMMIT_MESSAGE" value="used LINQ functionality to minimize code" />
   </component>
 </project>
