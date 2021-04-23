@@ -4,67 +4,12 @@
     <projectFile>Sorter/Sorter.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d92780fd-5834-4a28-8829-3235a6981f05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sorter/src/MyConvert.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/App.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/MenuWindow.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter.g.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/Sorter3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/colors.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/dimens.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]/style.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/App.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter.g.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/Sorter3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/colors.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/dimens.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47_[Default_Changelist]1/style.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2021_13_47__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/Sorter.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/Sorter_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/colors.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/dimens.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48_[Default_Changelist]/style.baml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/shelf/Uncommitted_changes_before_Merge_at_15_04_2021_13_48__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Sorter/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d92780fd-5834-4a28-8829-3235a6981f05" name="Default Changelist" comment="used LINQ functionality to minimize code">
       <change beforePath="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/Sorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/Sorter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/Sorter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/Sorter.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/ref/Sorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/bin/Debug/net5.0-windows/ref/Sorter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/App.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.g.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/Sorter.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/ref/Sorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/ref/Sorter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/colors.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/colors.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/dimens.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/dimens.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/style.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/res/style.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/src/DataChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/DataChecker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sorter/src/Enums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/Enums.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sorter/src/FileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/FileData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/MethodsAsc.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sorter/src/MethodsDesc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorter/src/_Convert.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,21 +39,29 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Sorter/obj/Debug/net5.0-windows/MenuWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/MenuWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C977CB0D-0AF7-438A-A72E-B47D6601CD8C/D/AnyAll.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/f7/4b782093/ReadOnlySpan`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/64/903c2b5a/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/DataChecker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD3F5EAD-4C75-44CA-9D93-E0A7F6E363B5/3f/9a793994/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/28/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsDesc.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sorter/MenuWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B7/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3A/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/FileData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/43/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3B/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/235/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B370AA08-3C69-480D-91E2-9ABDE31D0F0B/9A/DockPanel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B3/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/DataChecker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/B7/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sorter/MenuWindow.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/MethodsAsc.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1C987A05-35B5-4F01-93EB-EA66887DC2DB/100/ErrorCodes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/12/71729c7d/Int32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/3F/String.cs" root0="SKIP_HIGHLIGHTING" />
@@ -119,6 +72,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/1F/Buffer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/D/Regex.Cache.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ABB5017-1536-4AC9-9F7D-A71E0C240AEE/10/Regex.Split.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/maxhe/RiderProjects/Sorter/Sorter/src/Enums.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/426/Unsafe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/59/35ebcfaa/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -204,7 +158,7 @@
       <workItem from="1618425002152" duration="40756000" />
       <workItem from="1618762780302" duration="71034000" />
       <workItem from="1619201128582" duration="780000" />
-      <workItem from="1619202448867" duration="6251000" />
+      <workItem from="1619202448867" duration="6555000" />
     </task>
     <task id="LOCAL-00001" summary="add resource files">
       <created>1617655024669</created>
@@ -367,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619006330254</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="renamed class _Convert.cs to MyConvert.cs and used LINQ functionality to minimize code">
+      <created>1619209269703</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1619209269704</updated>
+    </task>
+    <task id="LOCAL-00025" summary="used LINQ functionality to minimize code">
+      <created>1619209312400</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1619209312400</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,6 +392,8 @@
     <MESSAGE value="changed type of the input parameters" />
     <MESSAGE value="change type of the input parameters and added stopwatches to each method" />
     <MESSAGE value=".idea files" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea files" />
+    <MESSAGE value="renamed class _Convert.cs to MyConvert.cs and used LINQ functionality to minimize code" />
+    <MESSAGE value="used LINQ functionality to minimize code" />
+    <option name="LAST_COMMIT_MESSAGE" value="used LINQ functionality to minimize code" />
   </component>
 </project>

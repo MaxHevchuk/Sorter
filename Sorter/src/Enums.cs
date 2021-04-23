@@ -1,5 +1,8 @@
 namespace Sorter
 {
+    /// <summary>
+    /// Enum for working with data types.
+    /// </summary>
     public enum DataType
     {
         StrEng,
@@ -10,6 +13,9 @@ namespace Sorter
         Size
     }
 
+    /// <summary>
+    /// Enum for working with data types.
+    /// </summary>
     public enum SortingMethods
     {
         Bubble,
@@ -19,6 +25,9 @@ namespace Sorter
         Selection
     }
 
+    /// <summary>
+    /// Enum for working with english alphabet.
+    /// </summary>
     public enum Eng
     {
         A = 1,
@@ -75,6 +84,9 @@ namespace Sorter
         z
     }
 
+    /// <summary>
+    /// Enum for working with ukrainian alphabet.
+    /// </summary>
     public enum Ua
     {
         А = 1,
