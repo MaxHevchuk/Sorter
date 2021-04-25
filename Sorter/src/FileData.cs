@@ -14,7 +14,7 @@ namespace Sorter
         {
             var data = string.Empty;
 
-            OpenFileDialog openFileDialog = new OpenFileDialog
+            var openFileDialog = new OpenFileDialog
             {
                 Filter = Filter,
                 InitialDirectory = Path
