@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace Sorter
     public partial class MenuWindow
     {
         private const string PathEnumUa = @"..\..\..\res\sample_str.txt";
-        private const string PathEnumEng = @"..\..\..\res\sample_num.txt";
+        private const string PathEnumNum = @"..\..\..\res\sample_num.txt";
 
         private string _inputData;
         private string _outputData;
@@ -54,6 +53,26 @@ namespace Sorter
             _inputSeparator = (InputSeparatorText.Text.Length == 0) ? " " : InputSeparatorText.Text;
             _outputSeparator = (OutputSeparatorText.Text.Length == 0) ? " " : OutputSeparatorText.Text;
 
+            _isInAscendingOrder =
+                AscendingRadioButt.IsChecked != null && (bool) AscendingRadioButt.IsChecked;
+            _isIgnoreDuplicate =
+                IgnoreDuplicateCheckBox.IsChecked != null && (bool) IgnoreDuplicateCheckBox.IsChecked;
+
+
+            /* |||||||||||||||||||
+            var method = new MethodsAsc();
+            var arr = _inputData.Split();
+            var array = arr.Select(word => word.Length).ToArray();
+            method.BubbleSort(ref array, out _);
+            string[] res = new string[arr.Length];
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                res[i] = Array.Find(arr, word => word.Length == array[i]);
+            }
+
+            OutputText.Text = string.Join(' ', res);
+            ||||||||||||||||| */
 
             if (!DataChecker.CheckForCorrect(_inputData, _dataType, _inputSeparator))
             {
@@ -61,9 +80,6 @@ namespace Sorter
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-            _isInAscendingOrder = (bool) AscendingRadioButt.IsChecked;
-            _isIgnoreDuplicate = (bool) IgnoreDuplicateCheckBox.IsChecked;
 
             if (_sorter != null)
             {
@@ -82,16 +98,33 @@ namespace Sorter
 
             _tempArray = _inputData.Split(new[] {_inputSeparator}, StringSplitOptions.None);
             if (_isIgnoreDuplicate) _tempArray = _tempArray.Distinct().ToArray();
-            if (_dataType is DataType.StrEng or DataType.StrUa)
+            switch (_dataType)
             {
-                _permutation = _methodStr(ref _tempArray, out _time);
-                _outputData = string.Join(_outputSeparator, _tempArray);
-            }
-            else
-            {
-                var tempArrayInt = MyConvert.ToIntArray(_tempArray, _dataType);
-                _permutation = _methodInt(ref tempArrayInt, out _time);
-                _outputData = MyConvert.ToString(tempArrayInt, _dataType, _outputSeparator);
+                case DataType.StringEnglish or DataType.StringUkrainian:
+                    _permutation = _methodStr(ref _tempArray, out _time);
+                    _outputData = string.Join(_outputSeparator, _tempArray);
+                    break;
+                case DataType.Length:
+                    var lengthArray = _tempArray.Select(word => word.Length).ToArray();
+                    _permutation = _methodInt(ref lengthArray, out _time);
+                    var res = new string[lengthArray.Length];
+
+                    for (var i = 0; i < res.Length; i++)
+                    {
+                        res[i] = Array.Find(_tempArray, word => word.Length == lengthArray[i]);
+                        var numIndex = Array.IndexOf(_tempArray, res[i]);
+                        _tempArray = _tempArray.Where((_, idx) => idx != numIndex).ToArray();
+                    }
+
+                    _outputData = string.Join(_outputSeparator, res);
+                    break;
+                default:
+                {
+                    var tempArrayInt = MyConvert.ToIntArray(_tempArray, _dataType);
+                    _permutation = _methodInt(ref tempArrayInt, out _time);
+                    _outputData = MyConvert.ToString(tempArrayInt, _dataType, _outputSeparator);
+                    break;
+                }
             }
 
 
@@ -130,7 +163,7 @@ namespace Sorter
 
         private void BtnChangeLocalization(object sender, RoutedEventArgs e)
         {
-            new MenuWindow((Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "uk") ? "en" : "uk",
+            new MenuWindow(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "uk" ? "en" : "uk",
                 InputText.Text).Show();
             Close();
         }
@@ -175,14 +208,14 @@ namespace Sorter
 
         private void BtnFullscreen(object sender, RoutedEventArgs e)
         {
-            var columnDefinition = ((Button) sender).Name == "LeftFullScreenButt" ? LeftCol : RightCol;
             var button = (Button) sender;
+            var activeColumn = button.Name == "LeftFullScreenButt" ? LeftCol : RightCol;
 
             if (!_isFullscreen)
             {
                 foreach (var column in Base.ColumnDefinitions)
                 {
-                    if (column.Name != columnDefinition.Name)
+                    if (column.Name != activeColumn.Name)
                     {
                         column.Width = new GridLength(0, GridUnitType.Star);
                     }
@@ -195,10 +228,10 @@ namespace Sorter
             {
                 foreach (var column in Base.ColumnDefinitions)
                 {
-                    var columnName = column.Name;
-                    if (columnName != columnDefinition.Name)
+                    var columnsName = column.Name;
+                    if (columnsName != activeColumn.Name)
                     {
-                        column.Width = (columnName == CenterCol.Name)
+                        column.Width = columnsName == CenterCol.Name
                             ? new GridLength(1.5, GridUnitType.Star)
                             : new GridLength(2, GridUnitType.Star);
                     }
@@ -211,32 +244,33 @@ namespace Sorter
 
         private void TypeComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TypeComboBox.SelectedItem == null) return;
+            var comboBoxItem = TypeComboBox.SelectedItem;
+            if (comboBoxItem == null) return;
 
-            var cbi = (ComboBoxItem) TypeComboBox.SelectedItem;
-            if (cbi == UaComboBox) _dataType = DataType.StrUa;
-            else if (cbi == BinComboBox) _dataType = DataType.IntTwo;
-            else if (cbi == DecComboBox) _dataType = DataType.IntTen;
-            else if (cbi == HexComboBox) _dataType = DataType.IntSixteen;
-            else _dataType = DataType.StrEng;
+            if (comboBoxItem.Equals(UaComboBox)) _dataType = DataType.StringUkrainian;
+            else if (comboBoxItem.Equals(BinComboBox)) _dataType = DataType.NumberBinary;
+            else if (comboBoxItem.Equals(DecComboBox)) _dataType = DataType.NumberDecimal;
+            else if (comboBoxItem.Equals(HexComboBox)) _dataType = DataType.NumberHexadecimal;
+            else if (comboBoxItem.Equals(LenComboBox)) _dataType = DataType.Length;
+            else _dataType = DataType.StringEnglish;
         }
 
         private void MethodComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MethodComboBox.SelectedItem == null) return;
+            var methodComboBox = MethodComboBox.SelectedItem;
+            if (methodComboBox == null) return;
 
-            var cbi = (ComboBoxItem) MethodComboBox.SelectedItem;
-            if (cbi == CocktailComboBox) _sortingMethod = SortingMethods.Cocktail;
-            else if (cbi == InsertionComboBox) _sortingMethod = SortingMethods.Insertion;
-            else if (cbi == MergeComboBox) _sortingMethod = SortingMethods.Merge;
-            else if (cbi == SelectionComboBox) _sortingMethod = SortingMethods.Merge;
+            if (methodComboBox.Equals(CocktailComboBox)) _sortingMethod = SortingMethods.Cocktail;
+            else if (methodComboBox.Equals(InsertionComboBox)) _sortingMethod = SortingMethods.Insertion;
+            else if (methodComboBox.Equals(MergeComboBox)) _sortingMethod = SortingMethods.Merge;
+            else if (methodComboBox.Equals(SelectionComboBox)) _sortingMethod = SortingMethods.Merge;
             else _sortingMethod = SortingMethods.Bubble;
         }
 
         private void BtnSample(object sender, RoutedEventArgs e)
         {
-            var path = _dataType is DataType.StrEng or DataType.StrUa ? PathEnumUa : PathEnumEng;
-            InputText.Text = File.ReadAllText(path);
+            var path = _dataType is DataType.StringEnglish or DataType.StringUkrainian ? PathEnumUa : PathEnumNum;
+            InputText.Text = FileData.OpenSample(path);
         }
     }
 }
