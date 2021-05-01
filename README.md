@@ -29,7 +29,7 @@ Working software module that implements basic functions such as:
 - [x] sorting decimal numbers;
 - [x] sorting binary numbers;
 - [x] sorting hexadecimal numbers;
-- [ ] sorting by size of the words;
+- [x] sorting by size of the words;
 -
 - [ ] documented classes and methods with XML comments;
 - [ ] written comments to the code that explain its work;
