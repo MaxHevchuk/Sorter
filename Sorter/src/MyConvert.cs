@@ -8,6 +8,12 @@ namespace Sorter
     /// </summary>
     public static class MyConvert
     {
+        /// <summary>
+        /// Converts string data array to int array.
+        /// </summary>
+        /// <param name="strings">String data array.</param>
+        /// <param name="dataType">Data type.</param>
+        /// <returns>Returns converted data array.</returns>
         public static int[] ToIntArray(string[] strings, Enum dataType)
         {
             return dataType switch
@@ -19,6 +25,13 @@ namespace Sorter
             };
         }
 
+        /// <summary>
+        /// Converts int data array to string data.
+        /// </summary>
+        /// <param name="data">Int data array.</param>
+        /// <param name="dataType">Data type.</param>
+        /// <param name="separator">Output separator.</param>
+        /// <returns>Returns converted string data.</returns>
         public static string ToString(int[] data, Enum dataType, string separator)
         {
             return dataType switch
@@ -30,9 +43,22 @@ namespace Sorter
             };
         }
 
+        /// <summary>
+        /// Converts string data array to int array.
+        /// </summary>
+        /// <param name="strings">String data array.</param>
+        /// <param name="toBase">Indicates which number system to convert the data to.</param>
+        /// <returns>Returns converted data array.</returns>
         private static int[] StringToInt(string[] strings, int toBase) =>
             strings.Select(word => Convert.ToInt32(word, toBase)).ToArray();
 
+        /// <summary>
+        /// Converts int data array to string data.
+        /// </summary>
+        /// <param name="data">Int data array.</param>
+        /// <param name="separator">Output separator.</param>
+        /// <param name="toBase">Indicates from which number system need to convert the items.</param>
+        /// <returns>Returns converted and joined with output separator string array.</returns>
         private static string IntToString(int[] data, string separator, int toBase) =>
             string.Join(separator,
                 data.Select(number => Convert.ToString(number, toBase)));

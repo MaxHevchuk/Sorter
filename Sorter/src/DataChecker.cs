@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Windows;
 
 namespace Sorter
 {
@@ -15,12 +14,19 @@ namespace Sorter
         private const string NumbersDecimal = "-0123456789";
         private const string NumbersHexadecimal = "0123456789AaBbCcDdEeFf";
 
+        
+        /// <summary>
+        /// Check if entered data is correct and corresponds to the entered data type. 
+        /// </summary>
+        /// <param name="data">Data represented by string type.</param>
+        /// <param name="dataType">Data type.</param>
+        /// <param name="separator">Entered separator.</param>
+        /// <returns>Returns a boolean indicating the result of the checking.</returns>
         public static bool CheckForCorrect(string data, Enum dataType, string separator)
         {
             if (data is not {Length: > 0})
             {
-                MessageBox.Show("Please, enter data in the field.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                MyMessageBox.EmptyField();
                 return false;
             }
 
@@ -37,6 +43,12 @@ namespace Sorter
             };
         }
 
+        /// <summary>
+        /// Check that all items of the array are in string constant. 
+        /// </summary>
+        /// <param name="strings">Data array.</param>
+        /// <param name="constant">String with all possible symbols for data type.</param>
+        /// <returns>Returns a boolean indicating that all items are in possible symbols.</returns>
         private static bool CheckIfElementsIsCorrect(string[] strings, string constant) =>
             strings.All(element =>
                 element.ToCharArray().All(constant.Contains));

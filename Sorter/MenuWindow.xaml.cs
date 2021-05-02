@@ -9,6 +9,9 @@ using System.Windows.Media;
 
 namespace Sorter
 {
+    /// <summary>
+    /// The main class of the program.
+    /// </summary>
     public partial class MenuWindow
     {
         private const string PathEnumUa = @"..\..\..\res\sample_str.txt";
@@ -32,7 +35,7 @@ namespace Sorter
         private static Method<int> _methodInt;
         private static Method<string> _methodStr;
 
-        private delegate int Method<T>(ref T[] data, out long time) where T : IComparable<T>;
+        private delegate void Method<T>(ref T[] data, out long time, out int permutations) where T : IComparable<T>;
 
 
         public MenuWindow()
@@ -47,40 +50,48 @@ namespace Sorter
             InputText.Text = data;
         }
 
+
         private void BtnSort(object sender, RoutedEventArgs e)
+        {
+            GetInputData();
+
+            if (!DataChecker.CheckForCorrect(_inputData, _dataType, _inputSeparator))
+            {
+                MyMessageBox.IncorrectData();
+                return;
+            }
+
+            SetSorterObject();
+            SetSortingMethodToObject();
+
+            _tempArray = _inputData.Split(new[] {_inputSeparator}, StringSplitOptions.None);
+            if (_isIgnoreDuplicate) _tempArray = _tempArray.Distinct().ToArray();
+
+            SortData();
+            SetOutputData();
+        }
+
+        private void GetInputData()
         {
             _inputData = InputText.Text;
             _inputSeparator = (InputSeparatorText.Text.Length == 0) ? " " : InputSeparatorText.Text;
             _outputSeparator = (OutputSeparatorText.Text.Length == 0) ? " " : OutputSeparatorText.Text;
-
             _isInAscendingOrder =
                 AscendingRadioButt.IsChecked != null && (bool) AscendingRadioButt.IsChecked;
             _isIgnoreDuplicate =
                 IgnoreDuplicateCheckBox.IsChecked != null && (bool) IgnoreDuplicateCheckBox.IsChecked;
+        }
 
+        private void SetOutputData()
+        {
+            OutputText.Text = _outputData;
+            PermutationNumberText.Content = _permutation.ToString();
+            LenghtNumberText.Content = _tempArray.Length;
+            TimeNumberText.Content = $"{_time} ticks";
+        }
 
-            /* |||||||||||||||||||
-            var method = new MethodsAsc();
-            var arr = _inputData.Split();
-            var array = arr.Select(word => word.Length).ToArray();
-            method.BubbleSort(ref array, out _);
-            string[] res = new string[arr.Length];
-
-            for (int i = 0; i < res.Length; i++)
-            {
-                res[i] = Array.Find(arr, word => word.Length == array[i]);
-            }
-
-            OutputText.Text = string.Join(' ', res);
-            ||||||||||||||||| */
-
-            if (!DataChecker.CheckForCorrect(_inputData, _dataType, _inputSeparator))
-            {
-                MessageBox.Show("The entered data does not match the selected type.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
+        private void SetSorterObject()
+        {
             if (_sorter != null)
             {
                 if (_sorter.GetType() == typeof(MethodsDesc) && _isInAscendingOrder)
@@ -93,48 +104,9 @@ namespace Sorter
                 }
             }
             else _sorter = _isInAscendingOrder ? new MethodsAsc() : new MethodsDesc();
-
-            ChooseSortingMethod();
-
-            _tempArray = _inputData.Split(new[] {_inputSeparator}, StringSplitOptions.None);
-            if (_isIgnoreDuplicate) _tempArray = _tempArray.Distinct().ToArray();
-            switch (_dataType)
-            {
-                case DataType.StringEnglish or DataType.StringUkrainian:
-                    _permutation = _methodStr(ref _tempArray, out _time);
-                    _outputData = string.Join(_outputSeparator, _tempArray);
-                    break;
-                case DataType.Length:
-                    var lengthArray = _tempArray.Select(word => word.Length).ToArray();
-                    _permutation = _methodInt(ref lengthArray, out _time);
-                    var res = new string[lengthArray.Length];
-
-                    for (var i = 0; i < res.Length; i++)
-                    {
-                        res[i] = Array.Find(_tempArray, word => word.Length == lengthArray[i]);
-                        var numIndex = Array.IndexOf(_tempArray, res[i]);
-                        _tempArray = _tempArray.Where((_, idx) => idx != numIndex).ToArray();
-                    }
-
-                    _outputData = string.Join(_outputSeparator, res);
-                    break;
-                default:
-                {
-                    var tempArrayInt = MyConvert.ToIntArray(_tempArray, _dataType);
-                    _permutation = _methodInt(ref tempArrayInt, out _time);
-                    _outputData = MyConvert.ToString(tempArrayInt, _dataType, _outputSeparator);
-                    break;
-                }
-            }
-
-
-            OutputText.Text = _outputData;
-            PermutationNumberText.Content = _permutation.ToString();
-            LenghtNumberText.Content = _tempArray.Length;
-            TimeNumberText.Content = $"{_time} ticks";
         }
 
-        private void ChooseSortingMethod()
+        private void SetSortingMethodToObject()
         {
             switch (_sortingMethod)
             {
@@ -158,6 +130,38 @@ namespace Sorter
                     _methodInt = _sorter.BubbleSort;
                     _methodStr = _sorter.BubbleSort;
                     break;
+            }
+        }
+
+        private void SortData()
+        {
+            switch (_dataType)
+            {
+                case DataType.StringEnglish or DataType.StringUkrainian:
+                    _methodStr(ref _tempArray, out _time, out _permutation);
+                    _outputData = string.Join(_outputSeparator, _tempArray);
+                    break;
+                case DataType.Length:
+                    var lengthArray = _tempArray.Select(word => word.Length).ToArray();
+                    _methodInt(ref lengthArray, out _time, out _permutation);
+                    var res = new string[lengthArray.Length];
+
+                    for (var i = 0; i < res.Length; i++)
+                    {
+                        res[i] = Array.Find(_tempArray, word => word.Length == lengthArray[i]);
+                        var numIndex = Array.IndexOf(_tempArray, res[i]);
+                        _tempArray = _tempArray.Where((_, idx) => idx != numIndex).ToArray();
+                    }
+
+                    _outputData = string.Join(_outputSeparator, res);
+                    break;
+                default:
+                {
+                    var tempArrayInt = MyConvert.ToIntArray(_tempArray, _dataType);
+                    _methodInt(ref tempArrayInt, out _time, out _permutation);
+                    _outputData = MyConvert.ToString(tempArrayInt, _dataType, _outputSeparator);
+                    break;
+                }
             }
         }
 
@@ -269,7 +273,9 @@ namespace Sorter
 
         private void BtnSample(object sender, RoutedEventArgs e)
         {
-            var path = _dataType is DataType.StringEnglish or DataType.StringUkrainian ? PathEnumUa : PathEnumNum;
+            var path = _dataType is DataType.StringEnglish or DataType.StringUkrainian or DataType.Length
+                ? PathEnumUa
+                : PathEnumNum;
             InputText.Text = FileData.OpenSample(path);
         }
     }

@@ -16,4 +16,13 @@
       <ProjectReference Include="..\Sorter\Sorter.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.csprojAssemblyReference.cache" />
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.dll" />
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.genruntimeconfig.cache" />
+      <Content Include="obj\Debug\net5.0-windows\Sorter.Tests.pdb" />
+    </ItemGroup>
+
 </Project>

@@ -5,11 +5,18 @@ using Microsoft.Win32;
 
 namespace Sorter
 {
+    /// <summary>
+    /// Provides the methods for working with text files.
+    /// </summary>
     public static class FileData
     {
         private const string Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
         private static readonly string Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+        /// <summary>
+        /// Creates a window that provide possibility to open a text file.
+        /// </summary>
+        /// <returns>Returns data string.</returns>
         public static string OpenFile()
         {
             var data = string.Empty;
@@ -25,18 +32,20 @@ namespace Sorter
 
             if (!string.IsNullOrEmpty(data) && !string.IsNullOrWhiteSpace(data)) return data;
             
-            MessageBox.Show("Select the file with the corresponding data.", "Error",
-                MessageBoxButton.OK, MessageBoxImage.Error);
+            MyMessageBox.EmptyFile();
             return string.Empty;
 
         }
 
+        /// <summary>
+        /// Creates a window that provide possibility to save a text file in any dirrectory.
+        /// </summary>
+        /// <param name="data">Data string.</param>
         public static void SaveFile(string data)
         {
             if (string.IsNullOrEmpty(data) || string.IsNullOrWhiteSpace(data))
             {
-                MessageBox.Show("Select the file with the corresponding data.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                MyMessageBox.EmptySaveField();
             }
             else
             {
@@ -50,6 +59,11 @@ namespace Sorter
             }
         }
 
+        /// <summary>
+        /// Opens a file and reads the data from it.
+        /// </summary>
+        /// <param name="path">Path to file.</param>
+        /// <returns>Returns sample data string.</returns>
         public static string OpenSample(string path)
         {
             string data;
@@ -60,8 +74,7 @@ namespace Sorter
             }
             catch (Exception ex) when (ex is DirectoryNotFoundException or FileNotFoundException)
             {
-                MessageBox.Show("Can't find the file for the specified path.", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                MyMessageBox.IncorrectPath();
                 return string.Empty;
             }
 

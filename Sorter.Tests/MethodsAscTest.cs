@@ -11,35 +11,35 @@ namespace Sorter.Tests
         [Test]
         public void BubbleSortTest()
         {
-            _methodsAsc.BubbleSort(ref _input, out _);
+            _methodsAsc.BubbleSort(ref _input, out _, out _);
             Assert.AreEqual(_expected, _input);
             _input = new[] {5, 1, 3, 6, 2, 4};
         }
         [Test]
         public void CocktailSortTest()
         {
-            _methodsAsc.CocktailSort(ref _input, out _);
+            _methodsAsc.CocktailSort(ref _input, out _, out _);
             Assert.AreEqual(_expected, _input);
             _input = new[] {5, 1, 3, 6, 2, 4};
         }
         [Test]
         public void InsertionTest()
         {
-            _methodsAsc.InsertionSort(ref _input, out _);
+            _methodsAsc.InsertionSort(ref _input, out _, out _);
             Assert.AreEqual(_expected, _input);
             _input = new[] {5, 1, 3, 6, 2, 4};
         }
         [Test]
         public void MergeSortTest()
         {
-            _methodsAsc.MergeSort(ref _input, out _);
+            _methodsAsc.MergeSort(ref _input, out _, out _);
             Assert.AreEqual(_expected, _input);
             _input = new[] {5, 1, 3, 6, 2, 4};
         }
         [Test]
         public void SelectionSortTest()
         {
-            _methodsAsc.SelectionSort(ref _input, out _);
+            _methodsAsc.SelectionSort(ref _input, out _, out _);
             Assert.AreEqual(_expected, _input);
             _input = new[] {5, 1, 3, 6, 2, 4};
         }
