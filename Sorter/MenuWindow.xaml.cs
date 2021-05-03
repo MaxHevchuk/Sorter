@@ -14,12 +14,12 @@ namespace Sorter
     /// </summary>
     public partial class MenuWindow
     {
-        private const string PathEnumUa = @"..\..\..\res\sample_str.txt";
-        private const string PathEnumNum = @"..\..\..\res\sample_num.txt";
+        private const string PathLettersSample = @"..\..\..\res\sample_str.txt";
+        private const string PathNumbersSample = @"..\..\..\res\sample_num.txt";
 
         private string _inputData;
         private string _outputData;
-        private string[] _tempArray;
+        private static string[] _tempArray;
         private DataType? _dataType;
         private SortingMethods _sortingMethod;
         private bool _isInAscendingOrder;
@@ -35,7 +35,9 @@ namespace Sorter
         private static Method<int> _methodInt;
         private static Method<string> _methodStr;
 
-        private delegate void Method<T>(ref T[] data, out long time, out int permutations) where T : IComparable<T>;
+        private delegate void Method<T>(ref T[] data, out long time, out int permutations);
+
+        public static string[] TempArray => _tempArray;
 
 
         public MenuWindow()
@@ -64,7 +66,9 @@ namespace Sorter
             SetSorterObject();
             SetSortingMethodToObject();
 
+            // split by string separator
             _tempArray = _inputData.Split(new[] {_inputSeparator}, StringSplitOptions.None);
+            // delete dublicates
             if (_isIgnoreDuplicate) _tempArray = _tempArray.Distinct().ToArray();
 
             SortData();
@@ -140,20 +144,6 @@ namespace Sorter
                 case DataType.StringEnglish or DataType.StringUkrainian:
                     _methodStr(ref _tempArray, out _time, out _permutation);
                     _outputData = string.Join(_outputSeparator, _tempArray);
-                    break;
-                case DataType.Length:
-                    var lengthArray = _tempArray.Select(word => word.Length).ToArray();
-                    _methodInt(ref lengthArray, out _time, out _permutation);
-                    var res = new string[lengthArray.Length];
-
-                    for (var i = 0; i < res.Length; i++)
-                    {
-                        res[i] = Array.Find(_tempArray, word => word.Length == lengthArray[i]);
-                        var numIndex = Array.IndexOf(_tempArray, res[i]);
-                        _tempArray = _tempArray.Where((_, idx) => idx != numIndex).ToArray();
-                    }
-
-                    _outputData = string.Join(_outputSeparator, res);
                     break;
                 default:
                 {
@@ -274,8 +264,8 @@ namespace Sorter
         private void BtnSample(object sender, RoutedEventArgs e)
         {
             var path = _dataType is DataType.StringEnglish or DataType.StringUkrainian or DataType.Length
-                ? PathEnumUa
-                : PathEnumNum;
+                ? PathLettersSample
+                : PathNumbersSample;
             InputText.Text = FileData.OpenSample(path);
         }
     }
