@@ -31,8 +31,8 @@ Working software module that implements basic functions such as:
 - [x] sorting hexadecimal numbers;
 - [x] sorting by size of the words;
 -
-- [ ] documented classes and methods with XML comments;
-- [ ] written comments to the code that explain its work;
+- [x] documented classes and methods with XML comments;
+- [x] written comments to the code that explain its work;
 
 ## Screenshots
 ![](https://github.com/MaxHevchuk/Sorter_2/blob/main/screenshots/1.png?raw=true)
