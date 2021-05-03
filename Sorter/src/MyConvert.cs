@@ -45,6 +45,12 @@ namespace Sorter
             };
         }
 
+        /// <summary>
+        /// Converts int size of elements to string data.
+        /// </summary>
+        /// <param name="numbers">Array of sizes of elements.</param>
+        /// <param name="separator">Output separator.</param>
+        /// <returns>Returns converted string data.</returns>
         private static string SizeToString(int[] numbers, string separator)
         {
             var i = 0;
