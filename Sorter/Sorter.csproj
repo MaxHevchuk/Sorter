@@ -42,6 +42,7 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>resources.en.resx</DependentUpon>
       </Compile>
+      <Compile Include="obj\Debug\net5.0-windows\Sorter_Content.g.i.cs" />
     </ItemGroup>
 
     <ItemGroup>
