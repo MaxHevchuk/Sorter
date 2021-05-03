@@ -28,10 +28,8 @@ C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\Sorter.pdb
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\Sorter.genruntimeconfig.cache
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\bin\Debug\net5.0-windows\uk\Sorter.resources.dll
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\Sorter.localization.resources.uk.resources
-C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\uk\Sorter.resources.cs
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\uk\Sorter.resources.dll
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\bin\Debug\net5.0-windows\en\Sorter.resources.dll
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\Sorter.localization.resources.en.resources
-C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\en\Sorter.resources.cs
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\en\Sorter.resources.dll
 C:\Users\maxhe\RiderProjects\Sorter\Sorter\obj\Debug\net5.0-windows\Sorter_Content.g.cs

@@ -4647,18 +4647,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter.Tests\\Sorter.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter.Tests\\Sorter.Tests.csproj",
       "projectName": "Sorter.Tests",
-      "projectPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter.Tests\\Sorter.Tests.csproj",
+      "projectPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter.Tests\\Sorter.Tests.csproj",
       "packagesPath": "C:\\Users\\maxhe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter.Tests\\obj\\",
+      "outputPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxhe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -4668,8 +4668,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter\\Sorter.csproj": {
-              "projectPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter\\Sorter.csproj"
+            "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter\\Sorter.csproj": {
+              "projectPath": "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter\\Sorter.csproj"
             }
           }
         }
@@ -4710,9 +4710,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"

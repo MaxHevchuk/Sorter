@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TVIQ3c3CsqSiB5zyderPGOhN53X4QorUGfu0c4aVRGjpjDlnSXzOJOUzm4wgwH9/hJSN9ObZ4MPHrIsXfoQ4Tw==",
+  "dgSpecHash": "GwnM0jXtpbe17HqBKQdlUdCZZIN50rgRJ+pK4n0jHypU7IubVeY5bdnYiOcu2fQdFKc+Vc8oF4NtApuYXMMWCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxhe\\RiderProjects\\Sorter_2\\Sorter.Tests\\Sorter.Tests.csproj",
+  "projectFilePath": "C:\\Users\\maxhe\\RiderProjects\\Sorter\\Sorter.Tests\\Sorter.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxhe\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\maxhe\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
