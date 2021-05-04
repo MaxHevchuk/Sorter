@@ -74,7 +74,7 @@
         <value>len</value>
     </data>
     <data name="PermutationLabel" xml:space="preserve">
-        <value>perm</value>
+        <value>swaps</value>
     </data>
     <data name="TimeLabel" xml:space="preserve">
         <value>time</value>

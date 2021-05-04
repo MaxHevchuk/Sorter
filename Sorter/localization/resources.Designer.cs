@@ -259,7 +259,7 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to perm.
+        ///   Looks up a localized string similar to swaps.
         /// </summary>
         public static string PermutationLabel {
             get {
