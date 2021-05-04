@@ -27,7 +27,7 @@ namespace Sorter
         private string _inputSeparator;
         private string _outputSeparator;
         private long _time;
-        private int _permutation;
+        private long _permutation;
         private IMethods _sorter;
 
         private bool _isFullscreen;
@@ -35,7 +35,7 @@ namespace Sorter
         private static Method<int> _methodInt;
         private static Method<string> _methodStr;
 
-        private delegate void Method<T>(ref T[] data, out long time, out int permutations);
+        private delegate void Method<T>(ref T[] data, out long time, out long permutations);
 
         public static string[] TempArray => _tempArray;
 
@@ -91,7 +91,7 @@ namespace Sorter
             OutputText.Text = _outputData;
             PermutationNumberText.Content = _permutation.ToString();
             LenghtNumberText.Content = _tempArray.Length;
-            TimeNumberText.Content = $"{_time} ticks";
+            TimeNumberText.Content = $"{_time} ms";
         }
 
         private void SetSorterObject()
