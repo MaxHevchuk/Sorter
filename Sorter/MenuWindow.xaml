@@ -334,7 +334,7 @@
                                Content="{x:Static local:resources.TimeLabel}" />
                         <Label x:Name="TimeNumberText"
                                Style="{StaticResource TopBottomLabelStyle}"
-                               Content="0 ticks"
+                               Content="0 ms"
                                Margin="{StaticResource FiveThreeZerosMargin}" />
                     </StackPanel>
 
