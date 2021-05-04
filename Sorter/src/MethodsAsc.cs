@@ -28,13 +28,14 @@ namespace Sorter
         /// <param name="time">The time it takes to sort the array.</param>
         /// <param name="permutations">Count of swapped items.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public void BubbleSort<T>(ref T[] array, out long time, out int permutations) where T : IComparable<T>
+        public void BubbleSort<T>(ref T[] array, out long time, out long permutations) where T : IComparable<T>
         {
             permutations = 0;
             var arrayLenght = array.Length;
             var swapped = false;
 
-            var stopwatch = Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             for (var i = 0; i < arrayLenght - 1; i++)
             {
                 for (var j = 0; j < arrayLenght - i - 1; j++)
@@ -51,7 +52,7 @@ namespace Sorter
             }
 
             stopwatch.Stop();
-            time = stopwatch.ElapsedTicks;
+            time = stopwatch.ElapsedMilliseconds;
         }
 
         /// <summary>
@@ -61,13 +62,14 @@ namespace Sorter
         /// <param name="time">The time it takes to sort the array.</param>
         /// <param name="permutations">Count of swapped items.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public void CocktailSort<T>(ref T[] array, out long time, out int permutations) where T : IComparable<T>
+        public void CocktailSort<T>(ref T[] array, out long time, out long permutations) where T : IComparable<T>
         {
             permutations = 0;
             var arrayLenght = array.Length;
             var swapped = false;
 
-            var stopwatch = Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             for (var i = 0; i < arrayLenght / 2; i++)
             {
                 // from left to right
@@ -95,7 +97,7 @@ namespace Sorter
             }
 
             stopwatch.Stop();
-            time = stopwatch.ElapsedTicks;
+            time = stopwatch.ElapsedMilliseconds;
         }
 
         /// <summary>
@@ -105,11 +107,12 @@ namespace Sorter
         /// <param name="time">The time it takes to sort the array.</param>
         /// <param name="permutations">Count of swapped items.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public void InsertionSort<T>(ref T[] array, out long time, out int permutations) where T : IComparable<T>
+        public void InsertionSort<T>(ref T[] array, out long time, out long permutations) where T : IComparable<T>
         {
             permutations = 0;
 
-            var stopwatch = Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             for (var i = 1; i < array.Length; i++)
             {
                 var value = array[i];
@@ -125,7 +128,7 @@ namespace Sorter
             }
 
             stopwatch.Stop();
-            time = stopwatch.ElapsedTicks;
+            time = stopwatch.ElapsedMilliseconds;
         }
 
         /// <summary>
@@ -135,15 +138,16 @@ namespace Sorter
         /// <param name="time">The time it takes to sort the array.</param>
         /// <param name="permutations">Count of swapped items.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public void MergeSort<T>(ref T[] array, out long time, out int permutations) where T : IComparable<T>
+        public void MergeSort<T>(ref T[] array, out long time, out long permutations) where T : IComparable<T>
         {
             permutations = 0;
             var temp = new T[array.Length];
 
-            var stopwatch = Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             permutations += MergeSort(ref array, temp, 0, array.Length - 1);
             stopwatch.Stop();
-            time = stopwatch.ElapsedTicks;
+            time = stopwatch.ElapsedMilliseconds;
         }
 
         ///<summary>
@@ -224,12 +228,13 @@ namespace Sorter
         /// <param name="time">The time it takes to sort the array.</param>
         /// <param name="permutations">Count of swapped items.</param>
         /// <returns>Number of inversions in the array.</returns>
-        public void SelectionSort<T>(ref T[] array, out long time, out int permutations) where T : IComparable<T>
+        public void SelectionSort<T>(ref T[] array, out long time, out long permutations) where T : IComparable<T>
         {
             permutations = 0;
             var arrayLength = array.Length;
 
-            var stopwatch = Stopwatch.StartNew();
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
             for (var i = 0; i < arrayLength - 1; i++)
             {
                 // Find the minimum element in unsorted array
@@ -242,7 +247,7 @@ namespace Sorter
             }
 
             stopwatch.Stop();
-            time = stopwatch.ElapsedTicks;
+            time = stopwatch.ElapsedMilliseconds;
         }
     }
 }
