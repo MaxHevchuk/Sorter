@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Documents;
 using Microsoft.Win32;
 
 namespace Sorter
@@ -31,32 +32,31 @@ namespace Sorter
 
 
             if (!string.IsNullOrEmpty(data) && !string.IsNullOrWhiteSpace(data)) return data;
-            
+
             MyMessageBox.EmptyFile();
             return string.Empty;
-
         }
 
         /// <summary>
         /// Creates a window that provide possibility to save a text file in any dirrectory.
         /// </summary>
         /// <param name="data">Data string.</param>
-        public static void SaveFile(string data)
+        public static bool SaveFile(string data)
         {
             if (string.IsNullOrEmpty(data) || string.IsNullOrWhiteSpace(data))
             {
                 MyMessageBox.EmptySaveField();
+                return false;
             }
-            else
+
+            var saveFileDialog = new SaveFileDialog
             {
-                var saveFileDialog = new SaveFileDialog
-                {
-                    Filter = Filter,
-                    InitialDirectory = Path
-                };
-                if (saveFileDialog.ShowDialog() == true)
-                    File.WriteAllText(saveFileDialog.FileName, data);
-            }
+                Filter = Filter,
+                InitialDirectory = Path
+            };
+            if (saveFileDialog.ShowDialog() == true)
+                File.WriteAllText(saveFileDialog.FileName, data);
+            return true;
         }
 
         /// <summary>

@@ -24,12 +24,6 @@ namespace Sorter
         /// <returns>Returns a boolean indicating the result of the checking.</returns>
         public static bool CheckForCorrect(string data, Enum dataType, string separator)
         {
-            if (data is not {Length: > 0})
-            {
-                MyMessageBox.EmptyField();
-                return false;
-            }
-
             var dataArray = data.Split(new[] {separator}, StringSplitOptions.None);
             return dataType switch
             {

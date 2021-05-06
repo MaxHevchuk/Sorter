@@ -57,6 +57,11 @@ namespace Sorter
         {
             GetInputData();
 
+            if (_inputData is not {Length: > 0})
+            {
+                MyMessageBox.EmptyField();
+                return;
+            }
             if (!DataChecker.CheckForCorrect(_inputData, _dataType, _inputSeparator))
             {
                 MyMessageBox.IncorrectData();
@@ -171,8 +176,7 @@ namespace Sorter
         {
             var name = ((Button) sender).Name;
             var textBox = (name == "LeftSaveButt") ? InputText : OutputText;
-            FileData.SaveFile(textBox.Text);
-
+            if (!FileData.SaveFile(textBox.Text)) return;
             ShowStatus(SaveFileText, Brushes.Red);
         }
 
