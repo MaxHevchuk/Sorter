@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SaveButton" xml:space="preserve">
-    <value>save</value>
-  </data>
-  <data name="OpenButton" xml:space="preserve">
-    <value>open</value>
-  </data>
   <data name="InputLabel" xml:space="preserve">
     <value>Input</value>
   </data>
@@ -131,12 +125,6 @@
   </data>
   <data name="SampleLabel" xml:space="preserve">
     <value>Sample</value>
-  </data>
-  <data name="ClearButton" xml:space="preserve">
-    <value>clear</value>
-  </data>
-  <data name="CopyButton" xml:space="preserve">
-    <value>copy</value>
   </data>
   <data name="SortButton" xml:space="preserve">
     <value>Sort</value>

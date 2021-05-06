@@ -88,29 +88,11 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to clear.
-        /// </summary>
-        internal static string ClearButton {
-            get {
-                return ResourceManager.GetString("ClearButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cocktail Sort.
         /// </summary>
         internal static string CocktailRadioBut {
             get {
                 return ResourceManager.GetString("CocktailRadioBut", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to copy.
-        /// </summary>
-        internal static string CopyButton {
-            get {
-                return ResourceManager.GetString("CopyButton", resourceCulture);
             }
         }
         
@@ -232,15 +214,6 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to open.
-        /// </summary>
-        internal static string OpenButton {
-            get {
-                return ResourceManager.GetString("OpenButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Output.
         /// </summary>
         internal static string OutputLabel {
@@ -273,15 +246,6 @@ namespace Sorter.localization {
         internal static string SampleLabel {
             get {
                 return ResourceManager.GetString("SampleLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to save.
-        /// </summary>
-        internal static string SaveButton {
-            get {
-                return ResourceManager.GetString("SaveButton", resourceCulture);
             }
         }
         

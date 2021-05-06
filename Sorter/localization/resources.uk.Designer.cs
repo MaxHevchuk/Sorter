@@ -88,29 +88,11 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to очистити.
-        /// </summary>
-        internal static string ClearButton {
-            get {
-                return ResourceManager.GetString("ClearButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Сортування перемішуванням.
         /// </summary>
         internal static string CocktailRadioBut {
             get {
                 return ResourceManager.GetString("CocktailRadioBut", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to скопіювати.
-        /// </summary>
-        internal static string CopyButton {
-            get {
-                return ResourceManager.GetString("CopyButton", resourceCulture);
             }
         }
         
@@ -142,7 +124,7 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Англійский алфавіт.
+        ///   Looks up a localized string similar to Англійський алфавіт.
         /// </summary>
         internal static string EnglishLettersRationBut {
             get {
@@ -232,15 +214,6 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to відкрити.
-        /// </summary>
-        internal static string OpenButton {
-            get {
-                return ResourceManager.GetString("OpenButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Виведення.
         /// </summary>
         internal static string OutputLabel {
@@ -273,15 +246,6 @@ namespace Sorter.localization {
         internal static string SampleLabel {
             get {
                 return ResourceManager.GetString("SampleLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to зберегети.
-        /// </summary>
-        internal static string SaveButton {
-            get {
-                return ResourceManager.GetString("SaveButton", resourceCulture);
             }
         }
         
@@ -331,7 +295,7 @@ namespace Sorter.localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Українский алфавіт.
+        ///   Looks up a localized string similar to Український алфавіт.
         /// </summary>
         internal static string UkrainianLettersRationBut {
             get {

@@ -18,13 +18,6 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-
-    <data name="SaveButton" xml:space="preserve">
-        <value>зберегети</value>
-    </data>
-    <data name="OpenButton" xml:space="preserve">
-        <value>відкрити</value>
-    </data>
     <data name="InputLabel" xml:space="preserve">
         <value>Введення</value>
     </data>
@@ -33,12 +26,6 @@
     </data>
     <data name="SampleLabel" xml:space="preserve">
         <value>Зразок</value>
-    </data>
-    <data name="ClearButton" xml:space="preserve">
-        <value>очистити</value>
-    </data>
-    <data name="CopyButton" xml:space="preserve">
-        <value>скопіювати</value>
     </data>
     <data name="SortButton" xml:space="preserve">
         <value>Сортувати</value>
@@ -53,10 +40,10 @@
         <value>Вихідний роздільник</value>
     </data>
     <data name="EnglishLettersRationBut" xml:space="preserve">
-        <value>Англійский алфавіт</value>
+        <value>Англійський алфавіт</value>
     </data>
     <data name="UkrainianLettersRationBut" xml:space="preserve">
-        <value>Українский алфавіт</value>
+        <value>Український алфавіт</value>
     </data>
     <data name="BinaryNumRatioBut" xml:space="preserve">
         <value>Двійкові числа</value>
